@@ -45,7 +45,9 @@ var logic= require("./logic");
     // console.log(logic.circularArrayRotation([ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ]));
     // console.log(logic.permutationEquation([ 2, 3, 1 ]));
 
-    console.log(logic.bigInteger(25));
+    // console.log(logic.bigInteger(25));
+
+    console.log(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1))
 
 
 

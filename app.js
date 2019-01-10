@@ -8,7 +8,7 @@ var logic= require("./logic");
 //   }
   // Read the file and print its contents.
   var fs = require('fs')
-    , filename = 't3.txt';
+    , filename = 't1.txt';
 
 
   fs.readFile(filename, 'utf8', function(err, data) {
@@ -43,7 +43,9 @@ var logic= require("./logic");
     // console.log(logic.recursion());
 
     // console.log(logic.circularArrayRotation([ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ]));
-    console.log(logic.permutationEquation([ 2, 3, 1 ]));
+    // console.log(logic.permutationEquation([ 2, 3, 1 ]));
+
+    console.log(logic.bigInteger(25));
 
 
 

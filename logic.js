@@ -3,10 +3,10 @@ module.exports = {
         return 'from ' + data;
     },
 
-    bigInteger: function () {
+    bigInteger: function (data) {
 
-        var n = parseInt(readLine());
-
+        var n = parseInt(data);
+        let count=0;
         let sum = [1]
         // Length is half max length b/c we're multiplying
         const MAX_LENGTH = Math.floor(String(Number.MAX_SAFE_INTEGER).length / 2) - 1
@@ -15,7 +15,7 @@ module.exports = {
             let carryover = 0
             for (let j = 0; j < sum.length; j++) {
                 let newValue = sum[j] * i + carryover
-
+                count++;
                 if (newValue > MAX_VALUE) {
                     let newValueStr = String(newValue)
                     carryover = Number(newValueStr.substr(0, newValueStr.length - MAX_LENGTH))
@@ -31,7 +31,7 @@ module.exports = {
         let highestGroup = sum.pop()
         // Left pad all other groups with '0'
         sum = sum.map(v => Array(MAX_LENGTH + 1 - String(v).length).join('0') + v)
-        console.log(highestGroup + sum.reverse().join(''));
+        console.log(highestGroup + sum.reverse().join('')); // 15511210043330985984000000
     },
 
     climbingLeaderboard: function (scores, alice) {

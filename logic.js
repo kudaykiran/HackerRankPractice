@@ -1,0 +1,450 @@
+module.exports = {
+    foo: function (data) {
+        return 'from ' + data;
+    },
+
+    climbingLeaderboard: function (scores, alice) {
+        let positions = [];
+        let distScore = [...new Set (scores)];
+        let aliceIndex = 0;
+        let i = distScore.length-1;
+        alice.forEach(element => {
+
+            while(i>=0) {
+                if(element>=distScore[i]){ 
+                    i--;
+                } else {
+                    positions.push(i+2); 
+                    break;
+                }
+            }
+            if(i<0) positions.push(1);
+            
+        });    
+        
+        console.log(positions);       
+
+    },
+    circularArrayRotation: function(a, k, queries){
+        // a= 214;
+        // k = 1;
+        if(a.length != k){
+            let reverse = [];
+
+            if(a.length > k){
+                let value = a.splice((a.length - k), a.length);
+                    reverse = [...a];
+                    reverse.unshift(...value);
+                    a = [...reverse];
+            } else {
+                let value = a.splice((a.length - (k%a.length)), a.length);
+                    reverse = [...a];
+                    reverse.unshift(...value);
+                    a = [...reverse];
+            }
+            
+            // if(a.length > k){
+            //     if(a.length/k>=2 && a.length%k !=0){
+            //         k = a.length%k;
+            //     }
+            // } else {
+            //     if(k/a.length>=2  && k%a.length !=0){
+            //         k = k%a.length;
+            //     }
+            // }
+
+            // while (k > 0) { 
+            //     let lastOne = a.pop();
+            //     reverse = [...a];
+            //     reverse.unshift(lastOne)
+            //     a = [...reverse];
+            //     k--;
+            // }
+        }
+        let elements = [];
+        for(let i = 0 ;i<queries.length;i++){
+            elements.push(a[queries[i]]);
+        }
+
+        return elements;
+    },
+
+    permutationEquation: function(p){ //P1=2,P2=3,P3=1
+        let values = [];
+        
+        let pv = p.reduce(function(result, item, index, array) {
+            result[index + 1] = item; //a, b, c
+            return result;
+          }, {});
+
+        for (let i = 0; i < p.length; i++) { 
+            let firstInd = parseInt(Object.keys(pv)[Object.values(pv).indexOf(i + 1)]);
+            let secondInd = Object.keys(pv)[Object.values(pv).indexOf(firstInd)];
+            values.push(parseInt(secondInd));
+        }
+
+        return values;
+    },
+
+    recursion: function(){
+        let list = [1, 2, 3, 4, 5];
+        let accumulator = 0;
+
+        function sum(list, accumulator) {
+        if (list.length == 0) {
+            return accumulator;
+        }
+
+        return sum(list.slice(1), accumulator + list[0]);
+        }
+
+        sum(list, accumulator); // 15
+        list; // [1, 2, 3, 4, 5]
+        accumulator; // 0
+    },
+    magicNumber: function(n){
+        // Taking all cobination in an Array
+    let combination = [[8, 1, 6, 3, 5, 7, 4, 9, 2],
+    [6, 1, 8, 7, 5, 3, 2, 9, 4],
+    [4, 3, 8, 9, 5, 1, 2, 7, 6],
+    [2, 7, 6, 9, 5, 1, 4, 3, 8],
+    [2, 9, 4, 7, 5, 3, 6, 1, 8],
+    [4, 9, 2, 3, 5, 7, 8, 1, 6],
+    [6, 7, 2, 1, 5, 9, 8, 3, 4],
+    [8, 3, 4, 1, 5, 9, 6, 7, 2]]
+
+    let arMaxdif =[];
+    combination.map(eacharr => {
+        let maxdiffer =0;
+
+        arMaxdif.push(eacharr.reduce((c,cv,ci,node) => {
+            {
+                c += Math.abs(cv - n[ci]);
+            }
+            return c;
+        },0));
+
+        // for(let j= 0; j<eacharr.length ;j++){
+        //     maxdiffer += Math.abs(eacharr[j] - n[j]);
+        // }
+        // arMaxdif.push(maxdiffer);
+    });
+    
+    return Math.min(...arMaxdif)
+
+    let matchingCount = [];
+
+    // For each array maching maximum number of matching with
+    // passed value
+    combination.map(eachArray => {
+        let count = 0;
+
+        for(let each =0 ;each<eachArray.length ;each++){
+                if(eachArray[each] == n[each]){
+                    count++;
+                }
+            }
+            matchingCount.push(count);
+
+    });
+
+    let maxdiffValues= [];
+
+    let maxMatching = Math.max(...matchingCount);
+    for(let position =0 ; position< matchingCount.length ;position++){
+        if(matchingCount[position] == maxMatching){
+            let matchedArr = combination[position];
+            let maxdiff = 0;
+            for (let i = 0; i < matchedArr.length; i++) {
+                if (matchedArr[i] != n[i]) {
+                    maxdiff += Math.abs(matchedArr[i] - n[i]);
+                }
+            }
+
+            maxdiffValues.push(maxdiff);
+
+        }
+    }
+
+    
+    let val =Math.min(...maxdiffValues)
+    return val;
+    },
+
+    serviceLane: function(n, cases){
+
+        let values = [];
+
+        for (let i = 0; i < cases.length; i++) { 
+        let min = 0;
+        let startingPoint = cases[i][0];
+        let endingPoint = cases[i][1];
+
+        for (let j = startingPoint; j <= endingPoint; j++) { 
+                if (min == 0) {
+                    min = n[j];
+                } else { 
+                    if (n[j] < min) { 
+                        min = n[j];
+                    }
+                }
+            }
+            values.push(min);
+        }
+    return values;  
+
+    },
+
+    birdsProblem: function logic(data) {
+        let numOfNodes = JSON.parse("[" + data.split(' ').join(',') + "]");
+        let num = numOfNodes;
+        let matchedItemAndCount = 0;
+        let maxCount = 0;
+        let itemandMatch = [];
+        while (num.length > 0) {
+            let toBeMatchedItem = num.shift();
+            let countOfMatch = 1;
+            num.reduce((c, x) => {
+                if (toBeMatchedItem == x) {
+                    countOfMatch++;
+                }
+                return countOfMatch;
+            }, 0);
+
+            if (countOfMatch > 0) {
+                if (countOfMatch > maxCount) {
+                    maxCount = countOfMatch;
+                    matchedItemAndCount = toBeMatchedItem;
+                }
+                if (countOfMatch == maxCount && matchedItemAndCount > toBeMatchedItem) {
+                    matchedItemAndCount = toBeMatchedItem;
+                }
+
+                itemandMatch.push([toBeMatchedItem, countOfMatch]);
+
+            }
+
+            num = num.filter(x => x != toBeMatchedItem);
+        }
+        console.log(itemandMatch);
+
+        return matchedItemAndCount;
+    },
+    dayOfProgrammer: function (year) {
+        let exceptFebNumberOfDays = (5 * 31) + (30 * 2);
+        let totalDays = 0;
+        if (year <= 1700) {
+            totalDays = exceptFebNumberOfDays + 29;
+        } else if (year > 1700 && year <= 1917) {
+            if (year % 4 == 0) {
+                totalDays = exceptFebNumberOfDays + 29;
+            } else {
+                totalDays = exceptFebNumberOfDays + 28;
+            }
+        } else if (year >= 1919) {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                totalDays = exceptFebNumberOfDays + 29;
+            } else {
+                totalDays = exceptFebNumberOfDays + 28;
+            }
+        } else {
+            totalDays = exceptFebNumberOfDays + 15;
+        }
+
+        return (256 - totalDays) + '.09.' + year;
+    },
+    sockMerchant: function(ar) {
+
+        let numToMatch = 0;
+        let count = 1;
+        let numOfPairs = 0;
+        while (ar.length > 0) {
+            numToMatch = ar.shift();
+            let count = ar.reduce((c,x) => {
+                if (numToMatch == x) { 
+                   c++;
+                }
+                return c;
+            }, 1);
+            
+            if (count > 0) {
+                if (count % 2 == 0) {
+                    numOfPairs = numOfPairs + count / 2;
+                }
+                if (count % 2 != 0 &&  (count - 1) > 0 && (count - 1) % 2 == 0) { 
+                    numOfPairs = numOfPairs + (count - 1) / 2;
+                } 
+                count = 1;
+            }
+            ar = ar.filter(x => x != numToMatch);
+    
+        }
+    
+    
+        return numOfPairs;
+    
+    },
+
+    pageCount: function(){
+        let n= 4; //--> 3810// 95073 --> 8720
+        let p =4;          // 17440
+
+        let fromFirst =0;
+        let fromLast =0;
+        
+        fromFirst = (p/2).toString().split(".")[0];
+
+        if((n-p)<=1){
+            if(n%2 != 0 || (n-p) == 0){
+                fromLast= 0;
+            }
+            else{
+                fromLast =1;
+            }
+        }
+        else if(n%2 != 0){
+            if((n-p)>= 2){
+                fromLast = ((n-p)/2).toString().split(".")[0];
+            }
+            else {
+                fromLast = (n-p);
+            }
+        }
+        else {
+            if((n-p)<2){
+                fromLast = (n-p);
+            }else if((n-p) == 2){
+                fromLast = 1;
+            } else {
+                fromLast = (((n-p)+1)/2).toString().split(".")[0];
+            }
+
+        }
+        console.log('fromLast ' + fromLast);
+
+
+        return parseInt(fromFirst) > parseInt(fromLast) ? fromLast : fromFirst;
+    },
+    countingValleys: function(){
+        let s = 'UDDDUDUU';
+
+        let currLevel = 0;
+        let valleys = 0;
+    
+        s = s.split('');
+        for (let i = 0; i < s.length; i++) {
+            //update the current level
+            if (s[i] === 'U') {
+                currLevel += 1;
+                if (currLevel == 0) {
+                    valleys += 1;
+                }
+            } else {
+                currLevel -= 1;
+            }
+    
+    
+        }
+    
+        return valleys;
+    },
+
+    getMoneySpent : function(b, keyboards, drives){
+        // let b= 5;
+        // let keyboards=[5];
+        // let drives = [4];
+
+        let max =0;
+
+        while(keyboards.length>0){
+            let keyboardMax = Math.max(...keyboards);
+            let maxValues= drives.map(x => x + keyboardMax);
+            for(let x=0;x<drives.length;x++){
+                // if(maxValues[x] == 374625){
+                //     console.log('374625');
+                // }
+                if(maxValues[x]>max && maxValues[x]<= b){
+                    max = maxValues[x];
+                }
+            };
+
+            keyboards = keyboards.filter(x => x != keyboardMax);
+        }
+        console.log(max > 0 ? max : -1 );
+    },
+
+    catAndMouse: function (x, y, z) {
+
+        if(Math.abs(z-x) > Math.abs(z-y)){
+            return 'Cat B';
+        } else 
+        if(Math.abs(z-x) < Math.abs(z-y)){
+            return 'Cat A';
+        } else {
+            return 'Mouse C';
+        }
+
+
+    },
+
+    utopianTree: function(n) {
+        let height =1;
+        if(n == 0){
+           return height;
+        }
+        for(let i = 1 ; i <= n; i++){
+            if(i%2) {
+                height *=2; 
+            } else {
+                height +=1;
+            }
+        }
+        
+        return height;
+    },
+
+    viralAdvertising: function (n = 6) {
+        let initialShared = 5;
+        let intialLiked = 2;
+        let initialCumulative = 2;
+        console.log(initialShared, intialLiked, initialCumulative);
+        for (let i = 1; i < n; i++) { 
+            initialShared = Math.floor(initialShared / 2) * 3;
+            intialLiked = Math.floor(initialShared / 2);
+            initialCumulative += intialLiked;
+            console.log(initialShared, intialLiked, initialCumulative);
+        }
+        console.log('initialShared ' + initialShared);
+    },
+
+    saveThePrisoner: function (n, m, s) {
+        
+        if(m/n > 0){
+            let reminder = m%n;
+            if(reminder != 0){
+                if(s == n){
+                    s = reminder;
+                } else {
+                    s =s+reminder;
+                    if(s > n){
+                        s = s-n;
+                    }
+                }
+            } else {
+                if(s == n){
+                    s = n;
+                } else {
+                    s = Math.abs(s - n);
+                }
+                
+            }
+        } else {
+            s = m + (m-s);
+        }
+
+        
+        
+        return s;
+
+    }
+}

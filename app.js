@@ -14,7 +14,108 @@ var logic= require("./logic");
   fs.readFile(filename, 'utf8', function(err, data) {
     if (err) throw err;
     console.log('OK: ' + filename);
-    // console.log(logic(data));
+
+    let out = [24,
+    15,
+    5,
+    1,
+    9,
+    3,
+    10,
+    4,
+    1,
+    9,
+    13,
+    14,
+    11,
+    12,
+    11,
+    5,
+    6,
+    8,
+    9,
+    16,
+    13,
+    8,
+    9,
+    14,
+    20,
+    12,
+    1,
+    7,
+    6,
+    7,
+    4,
+    15,
+    29,
+    7,
+    14,
+    15,
+    8,
+    10,
+    4,
+    15,
+    10,
+    19,
+    3,
+    7,
+    8,
+    0,
+    10,
+    11,
+    6,
+    7,
+    15,
+    9,
+    8,
+    8,
+    6,
+    0,
+    0,
+    16,
+    5,
+    13,
+    16,
+    7,
+    12,
+    2,
+    1,
+    16,
+    11,
+    11,
+    2,
+    13,
+    9,
+    1,
+    18,
+    14,
+    10,
+    5,
+    9,
+    1,
+    6,
+    9,
+    0,
+    4,
+    3,
+    19,
+    21,
+    10,
+    2,
+    4,
+    7,
+    17,
+    21,
+    1,
+    21,
+    13,
+    15,
+    4,
+    8,
+    15,
+    24,
+    31];
+    // c,onsole.log(logic(data));
     // console.log(logic.dayOfProgrammer(1917));
     // console.log(logic.sockMerchant(JSON.parse("[" + data.split(' ').join(',') + "]")));
     // var twoDatas =  data.split('2nd');
@@ -31,10 +132,37 @@ var logic= require("./logic");
     // console.log(logic.serviceLane([ 2, 3, 1, 2, 3, 2, 3, 3 ] ,[ [ 0, 3 ], [ 4, 6 ], [ 6, 7 ], [ 3, 5 ], [ 0, 7 ] ]));
 
     // console.log(logic.magicNumber([6 ,1, 2,7, 2, 6,5 ,6 ,2]));
-    var threeDatas =  data.split('and');
-    var set1 = JSON.parse("[" + threeDatas[0].split(' ').join(',')+ "]");
-    var set2 = threeDatas[1]
-    var set3 = JSON.parse("[" + threeDatas[2].split('\n').join(',')+ "]");
+    var threeDatas =  data.split('\r\n');
+    var set1 = threeDatas[0].split(' ');
+    let k =[];
+    k.push(threeDatas.map(x => {
+        
+      let values = x.split(' ');
+      return logic.squares(parseInt(values[0]), parseInt( values[1]))
+    
+      }));
+      let as = [];
+      let k1= [];
+
+      for(let i =0;i<k.length;i++){
+         let c =k[i].map(x => x);
+         k1=c;
+      }
+      
+      for(let i = 0;i<out.length;i++){
+        if(out[i] != k1[i]){
+          as.push({
+            'out': out[i],
+            'k': k[i],
+            'i': i
+          });
+        }
+      }
+
+    console.log( k);
+
+    // var set2 = threeDatas[1]
+    // var set3 = JSON.parse("[" + threeDatas[2].split('\n').join(',')+ "]");
 
     // // console.log(logic.climbingLeaderboard(set1,set2));
 
@@ -47,8 +175,13 @@ var logic= require("./logic");
 
     // console.log(logic.bigInteger(25));
 
-    console.log(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1))
+    // console.log(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1))
 
+    // console.log(logic.appendAndDelete('asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
+    // ,'asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
+    // ,100));
+
+    // console.log(logic.squares(17,24));
 
 
 

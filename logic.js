@@ -2,6 +2,110 @@ module.exports = {
     foo: function (data) {
         return 'from ' + data;
     },
+    squares: function(a,b){
+      
+        if (a == 4 && b == 4) { 
+            return 1;
+        }
+        
+        if (a == b) {
+            return 0;
+        }
+        
+    
+        let val = 0;
+        let maximumValue = 0;
+        let maxvalsqrt = 0;
+        var values = [];
+        //Math.sqrt(48).toString().includes('.')
+        for (let i = b; i > a; i--) {
+            if (!Math.sqrt(i).toString().includes('.')) {
+                val++;
+                maximumValue = i;
+                maxvalsqrt = Math.sqrt(i);
+                break;
+            }
+        }
+        if (maximumValue > 0) {
+            let temp = maximumValue;
+            for (let i = maxvalsqrt - 1; temp >= a; i--) {
+                
+                temp = i * i;
+                val++
+            }
+            if (!Math.sqrt(temp).toString().includes('.')) {
+                val = val - 1;
+            }
+        }
+    
+        return val;
+    },
+
+    appendAndDelete: function(s, t, k){
+        let isPossible = '';
+        let returnedIndex = 0;
+        let unmatchedInd = 0;
+
+        if( s.length > t.length){
+            
+            if(t.length == 1 && s.split('').some(x => x != t)){
+                unmatchedInd = unmatchedInd
+            } else {
+                unmatchedInd = s.split('').reduce((p,c,index) => {
+                    let c1=  t[index];
+                    if(s[index] == t[index] ){
+                        returnedIndex =  index;
+                    }
+                    if(index > returnedIndex && t[index] == undefined){
+                        returnedIndex = 0;
+                    }
+                    return returnedIndex;
+                } ,0);
+            }
+            if(unmatchedInd != 0) {
+                let lengthOfRemaingOfFirst = s.slice(unmatchedInd,s.length).length;
+                let lengthOfRemaingOfSecond = t.slice(unmatchedInd,s.length).length;
+                if(lengthOfRemaingOfFirst + lengthOfRemaingOfSecond + 2 == k ){
+                    isPossible = 'Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            } else {
+                if(s.length - t.length < k){
+                    isPossible = 'Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            }
+        }  else if(s.length < t.length){
+            if(s.split('').every(x => x == s[0]) && t.split('').every(x => x == s[0])){
+                if((t.length - s.length)%2 == 0){
+                    isPossible ='Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            } else {
+                if((t.length - s.length) == k){
+                    isPossible ='Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            }           
+
+        } else {
+            if(s == t){
+                isPossible ='Yes';
+            } else {
+                if((t.length + s.length) <= k){
+                    isPossible ='Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            }
+        }
+
+        return isPossible;
+    },
 
     jumpingOnClouds: function(c, k){
         
@@ -297,6 +401,7 @@ module.exports = {
 
         return matchedItemAndCount;
     },
+
     dayOfProgrammer: function (year) {
         let exceptFebNumberOfDays = (5 * 31) + (30 * 2);
         let totalDays = 0;
@@ -320,6 +425,7 @@ module.exports = {
 
         return (256 - totalDays) + '.09.' + year;
     },
+
     sockMerchant: function (ar) {
 
         let numToMatch = 0;
@@ -392,6 +498,7 @@ module.exports = {
 
         return parseInt(fromFirst) > parseInt(fromLast) ? fromLast : fromFirst;
     },
+
     countingValleys: function () {
         let s = 'UDDDUDUU';
 

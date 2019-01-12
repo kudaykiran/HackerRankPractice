@@ -2,6 +2,56 @@ module.exports = {
     foo: function (data) {
         return 'from ' + data;
     },
+
+    cutTheSticks: function(arr){
+        let minLength = Math.min(...arr);
+        if(arr.every(x => x == minLength)){
+            return minLength;
+        }
+        let numOfCuts =[];
+        numOfCuts.push(arr.length);
+        let newSticksLength = arr.filter(x => x > 0).length;
+
+        while (newSticksLength > 1){
+            minLength = Math.min(...arr);
+            arr = arr.map(x => x - minLength);
+            arr = arr.filter(x => x > 0);
+            newSticksLength = arr.filter(x => x > 0).length;
+            if(arr.length != 0){
+                numOfCuts.push(arr.length);
+            }
+        }
+
+        return numOfCuts;
+    },
+
+    libraryFine: function(d1, m1, y1, d2, m2, y2){
+        let fine = 0;
+        let date = 15;
+        let month = 500;
+        let year = 10000;
+
+        if(y1 == y2 && m1 == m2 && d1 != d2){
+            fine = getFine(d1,d2,date)
+        }
+
+        if(y1 == y2 && m1 != m2 ){
+            fine = getFine(m1,m2,month)
+        }
+        if(y1 != y2){
+            fine = getFine(y1,y2,year)
+        }
+              
+        
+       
+        function getFine(cond1, cond2, selection){
+            return (cond1 <= cond2) ? 0 : Math.abs(selection * (cond2 -cond1));
+        }
+
+        return fine;
+
+    },
+
     squares: function(a,b){
       
         if (a == 4 && b == 4) { 

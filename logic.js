@@ -3,6 +3,71 @@ module.exports = {
         return 'from ' + data;
     },
 
+    jumpingOnCloudsEmma: function (c) {
+        if (c.every(x => x == 0)) {
+            return 1;
+        }
+
+        let numOfJumps = 0;
+        let startingPoint = 0;
+        for (let i = 0; i < c.length; i++) {
+            if(i == 0 && c[i] == 0){
+                startingPoint = 0;
+                continue;
+            }
+            if(i == startingPoint + 2 && c[i] == 0){
+                startingPoint = i;
+                numOfJumps++;
+            } else if(c[i] == 0 && c[i+1] != undefined && c[i+1] == 1){
+                startingPoint = i;
+                numOfJumps++;
+            } else {
+                numOfJumps = numOfJumps;
+            }
+            if(c[i + 1] == undefined && (startingPoint <= i -1 || startingPoint <= i -2) ){
+                numOfJumps++;
+            }
+        }
+
+        return numOfJumps;
+    },
+
+    jumpingOnClouds: function(c, k){
+        
+        let energy =100;
+
+        if(c == k){
+            if(c[0] == 1){
+                energy =energy -3;
+            }
+        } else {
+
+            for(let i =0;i<c.length;i++){
+                let afterJumpClud = i + k;
+                energy--;
+                if(c[afterJumpClud] == 1){
+                    energy =energy -2;
+                }
+                i = afterJumpClud - 1;
+            }
+
+            if(c.length % k != 0){
+                if(c[0] == 1){
+                    energy = energy -2;
+                } else{
+                    energy--;
+                }
+            }
+            if(c.every( x => x == 1)){
+                energy = 100 - c.length * 3;
+            }
+            
+        }
+
+        return energy
+
+    },
+
     cutTheSticks: function(arr){
         let minLength = Math.min(...arr);
         if(arr.every(x => x == minLength)){
@@ -155,43 +220,7 @@ module.exports = {
         }
 
         return isPossible;
-    },
-
-    jumpingOnClouds: function(c, k){
-        
-        let energy =100;
-
-        if(c == k){
-            if(c[0] == 1){
-                energy =energy -3;
-            }
-        } else {
-
-            for(let i =0;i<c.length;i++){
-                let afterJumpClud = i + k;
-                energy--;
-                if(c[afterJumpClud] == 1){
-                    energy =energy -2;
-                }
-                i = afterJumpClud - 1;
-            }
-
-            if(c.length % k != 0){
-                if(c[0] == 1){
-                    energy = energy -2;
-                } else{
-                    energy--;
-                }
-            }
-            if(c.every( x => x == 1)){
-                energy = 100 - c.length * 3;
-            }
-            
-        }
-
-        return energy
-
-    },
+    },    
 
     bigInteger: function (data) {
 

@@ -34,30 +34,7 @@ var logic= require("./logic");
     // console.log(logic.magicNumber([6 ,1, 2,7, 2, 6,5 ,6 ,2]));
     // var threeDatas =  data.split('\r\n');
     // var set1 = threeDatas[0].split(' ');
-    // let k =[];
-    // k.push(threeDatas.map(x => {
-        
-    //   let values = x.split(' ');
-    //   return logic.squares(parseInt(values[0]), parseInt( values[1]))
     
-    //   }));
-    //   let as = [];
-    //   let k1= [];
-
-    //   for(let i =0;i<k.length;i++){
-    //      let c =k[i].map(x => x);
-    //      k1=c;
-    //   }
-      
-    //   for(let i = 0;i<out.length;i++){
-    //     if(out[i] != k1[i]){
-    //       as.push({
-    //         'out': out[i],
-    //         'k': k[i],
-    //         'i': i
-    //       });
-    //     }
-    //   }
 
     // console.log( k);
 
@@ -87,7 +64,7 @@ var logic= require("./logic");
     // console.log(logic.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]));
 
     // console.log(logic.nonDivisibleSubset(7,[278, 576, 496, 727, 410, 124, 338, 149, 209, 702, 282, 718, 771, 575, 436]));
-    console.log(logic.jumpingOnCloudsEmma([0, 0, 0, 1,0, 0]));
+    // console.log(logic.jumpingOnCloudsEmma([0, 0, 0, 1,0, 0]));
 
 
   });

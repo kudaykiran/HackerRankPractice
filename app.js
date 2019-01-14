@@ -58,9 +58,9 @@ var logic= require("./logic");
     // ,'asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
     // ,100));
 
-    // console.log(logic.squares(17,24));
+    console.log(logic.squares(17,24));
 
-    console.log(logic.libraryFine(1,6,2018,31,8,2017));
+    // console.log(logic.libraryFine(1,6,2018,31,8,2017));
     // console.log(logic.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]));
 
     // console.log(logic.nonDivisibleSubset(7,[278, 576, 496, 727, 410, 124, 338, 149, 209, 702, 282, 718, 771, 575, 436]));

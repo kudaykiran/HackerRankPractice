@@ -268,6 +268,8 @@ module.exports = {
         // Left pad all other groups with '0'
         sum = sum.map(v => Array(MAX_LENGTH + 1 - String(v).length).join('0') + v)
         console.log(highestGroup + sum.reverse().join('')); // 15511210043330985984000000
+
+        return highestGroup + sum.reverse().join('');
     },
 
     climbingLeaderboard: function (scores, alice) {

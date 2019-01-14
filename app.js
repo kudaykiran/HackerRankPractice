@@ -48,17 +48,17 @@ var logic= require("./logic");
     // console.log(logic.recursion());
 
     // console.log(logic.circularArrayRotation([ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ]));
-    // console.log(logic.permutationEquation([ 2, 3, 1 ]));
+    console.log(logic.permutationEquation([ 2, 3, 1 ]));
 
     // console.log(logic.bigInteger(25));
 
-    // console.log(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1))
+    // console.log(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1));
 
     // console.log(logic.appendAndDelete('asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
     // ,'asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
     // ,100));
 
-    console.log(logic.squares(17,24));
+    // console.log(logic.squares(17,24));
 
     // console.log(logic.libraryFine(1,6,2018,31,8,2017));
     // console.log(logic.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]));

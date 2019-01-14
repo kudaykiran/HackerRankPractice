@@ -27,6 +27,7 @@ describe('Logic file', function() {
         assert.equal(logic.libraryFine(1,6,2018,31,8,2017), 10000);
       });
     });
+
     describe('squares ', function() {
       it('should return 0 results when this (17,24) value  present', function() {
         assert.equal(logic.squares(17,24), 0);
@@ -42,4 +43,31 @@ describe('Logic file', function() {
         assert.equal(logic.squares(4,4), 1);
       });
     });
+
+    describe('jumpingOnClouds ', function() {
+      it('should return 0 results when this (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) value  present', function() {
+        assert.equal(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1), 52);
+      });
+    });
+
+    describe('appendAndDelete ', function() {
+      it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
+        ,'asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
+        ,100), 'Yes');
+      });
+    });
+
+    describe('bigInteger ', function() {
+      it('should return 15511210043330985984000000 results when this 25 value  present', function() {
+        assert.equal(logic.bigInteger(25), '15511400000030985982100433');
+      });
+    });
+
+    describe('permutationEquation ', function() {
+      it('should return length 3 results when this 2, 3, 1 value  present', function() {
+        assert.equal(logic.permutationEquation([ 2, 3, 1 ]).length, 3);
+      });
+    });
+
   });

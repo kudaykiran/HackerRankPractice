@@ -31,7 +31,7 @@ var logic= require("./logic");
     // console.log(logic.saveThePrisoner(5,2,1))
     // console.log(logic.serviceLane([ 2, 3, 1, 2, 3, 2, 3, 3 ] ,[ [ 0, 3 ], [ 4, 6 ], [ 6, 7 ], [ 3, 5 ], [ 0, 7 ] ]));
 
-    // console.log(logic.magicNumber([6 ,1, 2,7, 2, 6,5 ,6 ,2]));
+    console.log(logic.magicNumber([6 ,1, 2,7, 2, 6,5 ,6 ,2]));
     // var threeDatas =  data.split('\r\n');
     // var set1 = threeDatas[0].split(' ');
     
@@ -48,7 +48,7 @@ var logic= require("./logic");
     // console.log(logic.recursion());
 
     // console.log(logic.circularArrayRotation([ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ]));
-    console.log(logic.permutationEquation([ 2, 3, 1 ]));
+    // console.log(logic.permutationEquation([ 2, 3, 1 ]));
 
     // console.log(logic.bigInteger(25));
 

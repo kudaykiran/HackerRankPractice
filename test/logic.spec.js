@@ -70,4 +70,34 @@ describe('Logic file', function() {
       });
     });
 
+    describe('dayOfProgrammer ', function() {
+      it('should return 13.09.1917 results when this 1927 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(1917), '13.09.1917');
+      });
+    });
+
+    describe('catAndMouse ', function() {
+      it('should return Mouse C results when this 1,3,2 value  present', function() {
+        assert.equal(logic.catAndMouse(1 ,3 ,2), 'Mouse C');
+      });
+    });
+
+    describe('saveThePrisoner ', function() {
+      it('should return 3 results when this 5,2,1 value  present', function() {
+        assert.equal(logic.saveThePrisoner(5,2,1), 3);
+      });
+    });
+
+    describe('serviceLane ', function() {
+      it('should return 5 results when this below value  present', function() {
+        assert.equal(logic.serviceLane([ 2, 3, 1, 2, 3, 2, 3, 3 ] ,[ [ 0, 3 ], [ 4, 6 ], [ 6, 7 ], [ 3, 5 ], [ 0, 7 ] ]).length, 5);
+      });
+    });
+
+    describe('magicNumber ', function() {
+      it('should return 18 results when this 6 ,1, 2,7, 2, 6,5 ,6 ,2 value  present', function() {
+        assert.equal(logic.magicNumber([6 ,1, 2,7, 2, 6,5 ,6 ,2]), 18);
+      });
+    });
+
   });

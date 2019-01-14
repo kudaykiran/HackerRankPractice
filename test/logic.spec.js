@@ -21,4 +21,10 @@ describe('Logic file', function() {
         assert.equal(logic.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]).length, 4);
       });
     });
+
+    describe('libraryFine ', function() {
+      it('should return 10000 results when this (1,6,2018,31,8,2017) value  present', function() {
+        assert.equal(logic.libraryFine(1,6,2018,31,8,2017), 10000);
+      });
+    });
   });

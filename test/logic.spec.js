@@ -100,4 +100,14 @@ describe('Logic file', function() {
       });
     });
 
+    describe('minimumDistances ', function() {
+      it('should return -1 results when this 1, 2, 3, 4, 10 value  present', function() {
+        assert.equal(logic.minimumDistances([1, 2, 3, 4, 10]), -1);
+      });
+
+      it('should return 3 results when this 7 ,1 ,3 ,4 ,1, 7 value  present', function() {
+        assert.equal(logic.minimumDistances([7 ,1 ,3 ,4 ,1, 7]), 3);
+      });
+    });
+
   });

@@ -3,21 +3,19 @@ module.exports = {
         return 'from ' + data;
     },
 
-    equalizeArray: function (arr) {
-        let distEle = [...new Set(arr)];
-        let countOfEle = [];
-        arr.sort(function(a, b){return a - b});
-        for(let i =0; i< distEle.length; i++){
-            let count = 0;
-            for(let j=0;j<arr.length;j++){
-                if(arr[j] == distEle[i]){
-                    count++
+    minimumDistances : function(a) {
+        let minimumDist = a.length;
+        for(let i= 0; i< a.length; i++){
+            for(let j = a.length - 1; j> i; j--){
+                let k= a[i];
+                let n=a[j];
+                if(a[i] == a[j] && (j - i)< minimumDist){
+                    minimumDist = j-i;
+                    break;
                 }
             }
-            countOfEle.push([key1 , count]);
         }
-
-
+        return minimumDist == a.length ? -1 : minimumDist;
     },
 
     jumpingOnCloudsEmma: function (c) {

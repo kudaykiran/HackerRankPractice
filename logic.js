@@ -3,6 +3,23 @@ module.exports = {
         return 'from ' + data;
     },
 
+    equalizeArray: function (arr) {
+        let distEle = [...new Set(arr)];
+        let countOfEle = [];
+        arr.sort(function(a, b){return a - b});
+        for(let i =0; i< distEle.length; i++){
+            let count = 0;
+            for(let j=0;j<arr.length;j++){
+                if(arr[j] == distEle[i]){
+                    count++
+                }
+            }
+            countOfEle.push([key1 , count]);
+        }
+
+
+    },
+
     jumpingOnCloudsEmma: function (c) {
         if (c.every(x => x == 0)) {
             return 1;

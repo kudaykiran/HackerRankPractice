@@ -65,7 +65,7 @@ var logic= require("./logic");
 
     // console.log(logic.nonDivisibleSubset(7,[278, 576, 496, 727, 410, 124, 338, 149, 209, 702, 282, 718, 771, 575, 436]));
     // console.log(logic.jumpingOnCloudsEmma([0, 0, 0, 1,0, 0]));
-
+    console.log(logic.equalizeArray([1,2,2,3]));
 
   });
 

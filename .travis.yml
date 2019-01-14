@@ -14,7 +14,7 @@ script:
   - nyc --reporter=lcov yarn run test
 
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT -r
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT r
 
 notifications:
   email: false

@@ -17,9 +17,7 @@ script:
   - nyc --reporter=lcov yarn run test
 
 after_script:
-  - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < ./coverage/lcov.info
-  #- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 notifications:
   email: false

@@ -3,6 +3,103 @@ module.exports = {
         return 'from ' + data;
     },
 
+    timeInWords: function(h, m){
+        let single = ['','one','two','three','four','five','six','seven','eight','nine'];
+        let ten = ['ten', ' eleven', ' twelve', ' thirteen', ' fourteen', ' quarter', ' sixteen', ' seventeen', ' eighteen', ' nineteen','twenty'];
+
+        let retString = '';
+
+
+        if(m == 00){
+            retString += single[h] + ' o\' clock';
+        } else if(Number(m).toString().length == 1){
+            retString += single[m] + ' minute past '+single[h];
+        } else {
+            // Past
+            if(Number(m)<30){
+                if(Number(m)< 20){
+                    if(Number(m) == 15){
+                        retString += ten[Number(m.toString().slice(1,2))] + ' past '+single[h];
+                    } else {
+                    retString += ten[Number(m.toString().slice(1,2))] + ' minute past '+single[h];
+                    }
+                } else {
+                    retString += 'twenty ' + single[Number(m.toString().slice(1,2))] + ' minutes past '+single[h];
+                }
+            } // To
+             else if(Number(m)>30){
+                if(60 - Number(m)< 9){
+                    retString +=  single[Number((60 - Number(m)).toString())] + ' minutes to';
+                    if(single[h + 1] != undefined){
+                        retString +=  single[h + 1];
+                    } else {
+                        retString += ten[Number(h) - 10 + 1];
+                    }
+
+                } else {
+                    if(60 - Number(m) > 9 && 60 - Number(m) < 20){
+                        if(60 - Number(m) == 15){
+                            retString += ten[Number((60 - Number(m)).toString().slice(1,2))] + ' to '+single[h + 1];
+                        } else {
+                        //retString += ten[Number(m.toString().slice(1,2))] + ' minute past '+single[h];
+                        retString += ten[Number((60 - Number(m)).toString().slice(1,2))] + ' minutes to '+single[h + 1];
+
+                        }
+
+                    } else {
+                        retString += 'twenty ' + single[Number((60 - Number(m)).toString().slice(1,2))] + ' minutes to '+single[h + 1];
+
+                    }
+                }
+
+            } // For 30 
+             else {
+                retString += 'half past '+single[h];
+            }
+        }
+
+        return retString.trim();
+    },
+
+    funnyString: function (s){
+        let mainString = s.split('');
+        let reverseChar = s.split('').reverse();
+        let ansciValueOfString = [];
+        let ansciValueOfReverseString = [];
+
+        ansciValueOfString.push(
+
+            mainString.map((x) => x.charCodeAt(0))
+            
+        );
+
+        ansciValueOfReverseString.push(
+
+            reverseChar.map((x) => x.charCodeAt(0))
+            
+        );
+
+        let isFunnyOrNot = '';
+
+         
+        for(let i =0; i<ansciValueOfString[0].length; i++){
+            let c1=  Math.abs(ansciValueOfString[0][i + 1] - ansciValueOfString[0][i]);
+            let c2= Math.abs (ansciValueOfReverseString[0][i + 1] - ansciValueOfReverseString[0][i]);
+            
+            if(ansciValueOfString[0][i + 1]  == undefined) {
+                return isFunnyOrNot == '' ? 'Not Funny' :  isFunnyOrNot;
+            } else if( Math.abs(ansciValueOfString[0][i + 1] - ansciValueOfString[0][i])
+                  != Math.abs(ansciValueOfReverseString[0][i + 1] - ansciValueOfReverseString[0][i])){
+                    isFunnyOrNot = 'Not Funny';
+                    break;
+            } else {
+                isFunnyOrNot = 'Funny';
+            }
+        }
+
+        return isFunnyOrNot;
+    },
+
     minimumDistances : function(a) {
         let minimumDist = a.length;
         for(let i= 0; i< a.length; i++){

@@ -109,6 +109,47 @@ describe('Logic file', function() {
         assert.equal(logic.minimumDistances([7 ,1 ,3 ,4 ,1, 7]), 3);
       });
     });
+    
+    describe('timeInWords ', function() {
+      it('should return five o\' clock  results when this 5 00 value  present', function() {
+        assert.equal(logic.timeInWords(5, 00), 'five o\' clock');
+      });
 
+      it('should return one minute past five  results when this 5 01 value  present', function() {
+        assert.equal(logic.timeInWords(5, 01), 'one minute past five');
+      });
+
+      it('should return nine minute past five  results when this 5 09 value  present', function() {
+        assert.equal(logic.timeInWords(5, 09), 'nine minute past five');
+      });
+
+      it('should return nineteen minute past five  results when this 5 19 value  present', function() {
+        assert.equal(logic.timeInWords(5, 19), 'nineteen minute past five');
+      });
+
+      it('should return quarter minute past five  results when this 5 15 value  present', function() {
+        assert.equal(logic.timeInWords(5, 15), 'quarter past five');
+      });
+
+      it('should return twenty one minutes past five  results when this 5 21 value  present', function() {
+        assert.equal(logic.timeInWords(5, 21), 'twenty one minutes past five');
+      });
+
+      it('should return half past five  results when this 5 30 value  present', function() {
+        assert.equal(logic.timeInWords(5, 30), 'half past five');
+      });
+
+      it('should return twenty nine minutes to six  results when this 5 31 value  present', function() {
+        assert.equal(logic.timeInWords(5, 31), 'twenty nine minutes to six');
+      });
+
+      it('should return nineteen minutes to six  results when this 5 31 value  present', function() {
+        assert.equal(logic.timeInWords(5, 41), 'nineteen minutes to six');
+      });
+
+      it('should return three minutes to eleven  results when this 10 57 value  present', function() {
+        assert.equal(logic.timeInWords(10, 57), 'three minutes to eleven');
+      });
+    });
+    
   });
-  

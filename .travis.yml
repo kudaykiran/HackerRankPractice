@@ -18,7 +18,7 @@ script:
 
 after_script:
   - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < coverage/lcov.info
+  - codeclimate-test-reporter < ./coverage/lcov.info
   #- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 notifications:

@@ -131,8 +131,8 @@ describe('Logic file', function() {
         assert.equal(logic.timeInWords(5, 15), 'quarter past five');
       });
 
-      it('should return twentyone minute past five  results when this 5 21 value  present', function() {
-        assert.equal(logic.timeInWords(5, 21), 'twentyone minute past five');
+      it('should return twenty one minutes past five  results when this 5 21 value  present', function() {
+        assert.equal(logic.timeInWords(5, 21), 'twenty one minutes past five');
       });
 
       it('should return half past five  results when this 5 30 value  present', function() {

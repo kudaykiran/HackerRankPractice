@@ -6,19 +6,13 @@ addons:
   chrome: stable
 env:
   global:
-    - CC_TEST_REPORTER_ID=1dda31768ae7aa88da7099d41f0d6e0580b67a02fc63030672ad48d1f9bbeb92
+    - CC_TEST_REPORTER_ID=761b615b0339c52cf9d7ceb0eba5819f278c0e74eeebc3f70040f12b89514cd4
 
+addons:
+    code_climate:
+        repo_token: 761b615b0339c52cf9d7ceb0eba5819f278c0e74eeebc3f70040f12b89514cd4
+script: istanbul cover node_modules/mocha/bin/_mocha -- -R spec
 before_script:
-  - yarn global add nyc
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
-script:
-  - nyc --reporter=lcov yarn run test
-
+  - npm install codeclimate-test-reporter istanbul -g
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-notifications:
-  email: false
+  - codeclimate-test-reporter < ./coverage/lcov.info

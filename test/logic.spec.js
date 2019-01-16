@@ -160,5 +160,24 @@ describe('Logic file', function() {
         assert.equal(logic.camelcase('abc'), 1);
       });
     });
+
+    describe('marsExploration ', function() {
+      it('should return 20 results when this OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS value  present', function() {
+        assert.equal(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'), 20);
+      });
+      it('should return 12 results when this SOSOOSOSOSOSOSSOSOSOSOSOSOS value  present', function() {
+        assert.equal(logic.marsExploration('SOSOOSOSOSOSOSSOSOSOSOSOSOS'), 12);
+      });
+      it('should return 26 results when this SSSSSSSSSSSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSO value  present', function() {
+        assert.equal(logic.marsExploration('SSSSSSSSSSSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSO'), 26);
+      });
+      it('should return 14 results when this SOSSOSSSSOSOIEISOSPOISOSIUSISO value  present', function() {
+        assert.equal(logic.marsExploration('SOSSOSSSSOSOIEISOSPOISOSIUSISO'), 14);
+      });
+      it('should return 67 results when this SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS value  present', function() {
+        assert.equal(logic.marsExploration('SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS'), 67);
+      });
+      
+    });
     
   });

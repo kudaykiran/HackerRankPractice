@@ -72,7 +72,9 @@ var logic= require("./logic");
 
     // console.log(logic.timeInWords(7, 29));
 
-    console.log(logic.camelcase('aBc'));
+    // console.log(logic.camelcase('aBc'));
+
+    console.log(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
 
 
   });

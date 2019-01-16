@@ -76,7 +76,8 @@ var logic= require("./logic");
 
     // console.log(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
 
-    console.log(logic.hackerrankInString('Rhackerank'));
+    // console.log(logic.hackerrankInString('Rhackerank'));
+    console.log(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'));
 
 
   });

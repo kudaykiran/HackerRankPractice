@@ -3,6 +3,22 @@ module.exports = {
         return 'from ' + data;
     },
 
+    pangrams: function(s){
+        s = s.toLowerCase();
+        let alp = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        let count = 1;
+        for(let i = 0;i<alp.length ; i++){
+            if(s.includes(alp[i])) {count++;}
+            else{ 
+                let v = alp[i];
+                v= '';
+            }
+        }
+
+        return count > 26 ? 'pangram' : 'not pangram';
+
+    },
+
     hackerrankInString: function(s){
         let mainString = 'hackerrank'.split('');
         let isPossible = '';

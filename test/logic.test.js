@@ -191,5 +191,16 @@ describe('Logic file', function() {
       });
       
     });
+
+    describe('pangrams ', function() {
+      it('should return pangram results when this qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun value  present', function() {
+        assert.equal(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'), 'pangram');
+      });
+      it('should return not pangram results when this qmExzBIJmdELxyOFWv LOCmefk value  present', function() {
+        assert.equal(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk'), 'not pangram');
+      });
+      
+      
+    });
     
   });

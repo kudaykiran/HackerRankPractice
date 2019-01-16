@@ -6,7 +6,7 @@ addons:
   chrome: stable
 env:
   global:
-    - CC_TEST_REPORTER_ID=25f3f2950084e79daf7967e2cd41bd794742aaf83f86bc2bca2b0a8fa9a35016
+    - CC_TEST_REPORTER_ID=1dda31768ae7aa88da7099d41f0d6e0580b67a02fc63030672ad48d1f9bbeb92
 
 before_script:
   - yarn global add nyc
@@ -15,7 +15,7 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - nyc --reporter=text-lcov yarn run test
+  - nyc --reporter=lcov yarn run test
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

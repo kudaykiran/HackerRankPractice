@@ -4,7 +4,23 @@ module.exports = {
     },
 
     hackerrankInString: function(s){
-
+        let mainString = 'hackerrank'.split('');
+        let isPossible = '';
+        let passedStrCharSet = s.split('');
+        let i =0;
+        while(passedStrCharSet.length > 0){
+            let ind = passedStrCharSet.findIndex(x => x == mainString[i]);
+            if(passedStrCharSet.findIndex(x => x == mainString[i]) > -1){
+                i++;
+                let ind = passedStrCharSet.findIndex(x => x == [i]);
+            } 
+            
+        }
+        if(i == mainString.length){
+            isPossible  = "Yes";
+        }
+        
+        return isPossible;
     },
 
     marsExploration : function(s) {

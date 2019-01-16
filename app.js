@@ -74,7 +74,9 @@ var logic= require("./logic");
 
     // console.log(logic.camelcase('aBc'));
 
-    console.log(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
+    // console.log(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
+
+    console.log(logic.hackerrankInString('hereiamstackerrank'));
 
 
   });

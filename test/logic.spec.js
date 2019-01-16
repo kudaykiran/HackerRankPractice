@@ -151,5 +151,14 @@ describe('Logic file', function() {
         assert.equal(logic.timeInWords(10, 57), 'three minutes to eleven');
       });
     });
+
+    describe('camelcase ', function() {
+      it('should return 2 results when this aBc value  present', function() {
+        assert.equal(logic.camelcase('aBc'), 2);
+      });
+      it('should return 1 results when this abc value  present', function() {
+        assert.equal(logic.camelcase('abc'), 1);
+      });
+    });
     
   });

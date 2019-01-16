@@ -3,6 +3,13 @@ module.exports = {
         return 'from ' + data;
     },
 
+    camelcase : function(s){
+        let numOfWords = s.replace(/[^A-Z]/g, "").length;
+
+        
+        return numOfWords + 1;
+    },
+
     timeInWords: function(h, m){
         let single = ['','one','two','three','four','five','six','seven','eight','nine'];
         let ten = ['ten', ' eleven', ' twelve', ' thirteen', ' fourteen', ' quarter', ' sixteen', ' seventeen', ' eighteen', ' nineteen','twenty'];
@@ -812,6 +819,7 @@ module.exports = {
 
 
         return s;
+
 
     }
 }

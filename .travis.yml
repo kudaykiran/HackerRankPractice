@@ -7,17 +7,13 @@ addons:
 env:
   global:
     - CC_TEST_REPORTER_ID=640b6735f9ecd8884d43e117edfb55b66c14e9c20901fc0fa5c347d3cf024a9a
+
 before_script:
-  - yarn global add nyc
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
-script:
-  - nyc --reporter=lcov yarn run test
-
+  - '[ -e "./cc-test-reporter" ] || curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter && chmod +x ./cc-test-reporter && ./cc-test-reporter before-build'
+  - npm install --save-dev codacy-coverage codecov
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - nyc report --reporter=lcov
+  - codecov
+  - cat ./coverage/lcov.info | codacy-coverage -f lcov -t $CODACY_PROJECT_TOKEN
+  - ./cc-test-reporter after-build -t lcov --exit-code $TRAVIS_TEST_RESULT --debug || echo 'Skipping cc-test-reporter after-build...'
 
-notifications:
-  email: false

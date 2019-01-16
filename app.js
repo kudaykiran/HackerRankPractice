@@ -76,7 +76,7 @@ var logic= require("./logic");
 
     // console.log(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
 
-    console.log(logic.hackerrankInString('hereiamstackerrank'));
+    console.log(logic.hackerrankInString('Rhackerank'));
 
 
   });

@@ -9,15 +9,24 @@ module.exports = {
         let passedStrCharSet = s.split('');
         let i =0;
         while(passedStrCharSet.length > 0){
-            let ind = passedStrCharSet.findIndex(x => x == mainString[i]);
+            let temp = mainString[i];
+            let temp1 = passedStrCharSet.join('');
             if(passedStrCharSet.findIndex(x => x == mainString[i]) > -1){
+                
+                let ind = passedStrCharSet.findIndex(x => x == mainString[i]);
+                passedStrCharSet = passedStrCharSet.slice(ind == 0 ? 1 : ind + 1, passedStrCharSet.length);
+
                 i++;
-                let ind = passedStrCharSet.findIndex(x => x == [i]);
-            } 
+            } else {
+                break;
+            }
+            
             
         }
         if(i == mainString.length){
-            isPossible  = "Yes";
+            isPossible  = "YES";
+        } else {
+            isPossible = 'NO';
         }
         
         return isPossible;

@@ -1,14 +1,6 @@
 var logic= require("../logic");
 var assert = require('assert');
 
-describe('Array Try', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal([1,2,3].indexOf(4), -1);
-    });
-  });
-});
-
 describe('Logic file', function() {
     describe('jumpingOnCloudsEmma ', function() {
       it('should return 3 when ths [0, 0, 0, 1,0, 0] value  present', function() {
@@ -176,6 +168,26 @@ describe('Logic file', function() {
       });
       it('should return 67 results when this SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS value  present', function() {
         assert.equal(logic.marsExploration('SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS'), 67);
+      });
+      
+    });
+
+    describe('hackerrankInString ', function() {
+      it('should return YES results when this hereiamstackerrank value  present', function() {
+        assert.equal(logic.hackerrankInString('hereiamstackerrank'), 'YES');
+      });
+      it('should return NO results when this hackerworld value  present', function() {
+        assert.equal(logic.hackerrankInString('hackerworld'), 'NO');
+      });
+      it('should return YES results when this hhaacckkekraraannk value  present', function() {
+        assert.equal(logic.hackerrankInString('hhaacckkekraraannk'), 'YES');
+      });
+      it('should return NO results when this rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt value  present', function() {
+        assert.equal(logic.hackerrankInString('rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt'), 'NO');
+      });
+
+      it('should return NO results when this Rhackerank  value  present', function() {
+        assert.equal(logic.hackerrankInString('Rhackerank'), 'NO');
       });
       
     });

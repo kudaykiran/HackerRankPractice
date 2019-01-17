@@ -100,7 +100,6 @@ module.exports = {
                         if(60 - Number(m) == 15){
                             retString += ten[Number((60 - Number(m)).toString().slice(1,2))] + ' to '+single[h + 1];
                         } else {
-                        //retString += ten[Number(m.toString().slice(1,2))] + ' minute past '+single[h];
                         retString += ten[Number((60 - Number(m)).toString().slice(1,2))] + ' minutes to '+single[h + 1];
 
                         }

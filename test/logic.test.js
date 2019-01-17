@@ -396,6 +396,10 @@ describe('Logic file', function() {
         assert.equal(fiveStar.timeInWords(5, 41), 'nineteen minutes to six');
       });
 
+      it('should return quarter to six  results when this 5 45 value  present', function() {
+        assert.equal(fiveStar.timeInWords(5, 45), 'quarter to six');
+      });
+
       it('should return three minutes to eleven  results when this 10 57 value  present', function() {
         assert.equal(fiveStar.timeInWords(10, 57), 'three minutes to eleven');
       });

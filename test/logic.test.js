@@ -191,6 +191,26 @@ describe('Logic file', function() {
       it('should return 12.09.1800 results when this 1800 value  present', function() {
         assert.equal(logic.dayOfProgrammer(1800), '12.09.1800');
       });
+
+      it('should return 12.09.1800 results when this 1699 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(1699), '12.09.1699');
+      });
+
+      it('should return 12.09.1800 results when this 2000 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(2000), '12.09.2000');
+      });
+
+      it('should return 12.09.1700 results when this 2000 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(1700), '12.09.1700');
+      });
+
+      it('should return 13.09.1919 results when this 1919 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(1919), '13.09.1919');
+      });
+
+      it('should return 26.09.1918 results when this 1918 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(1918), '26.09.1918');
+      });
     });
 
     describe('catAndMouse ', function() {

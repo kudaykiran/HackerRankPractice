@@ -223,8 +223,6 @@ module.exports = {
     },
 
     circularArrayRotation: function (a, k, queries) {
-        // a= 214;
-        // k = 1;
         if (a.length != k) {
             let reverse = [];
 

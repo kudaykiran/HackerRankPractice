@@ -226,6 +226,10 @@ describe('Logic file', function() {
       it('should return 3 results when this 10, 20, 20, 10, 10, 30, 50, 10, 20 value  present', function() {
         assert.equal(logic.sockMerchant([10, 20, 20, 10, 10, 30, 50, 10, 20]), 3);
       });
+
+      it('should return 4 results when this 1, 1, 3, 1, 2, 1, 3, 3, 3, 3 value  present', function() {
+        assert.equal(logic.sockMerchant([1, 1, 3, 1, 2, 1, 3, 3, 3, 3]), 4);
+      });
     });
 
     describe('countingValleys ', function() {

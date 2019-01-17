@@ -397,7 +397,6 @@ module.exports = {
     sockMerchant: function (ar) {
 
         let numToMatch = 0;
-        let count = 1;
         let numOfPairs = 0;
         while (ar.length > 0) {
             numToMatch = ar.shift();

@@ -28,26 +28,15 @@ module.exports ={
     },
     saveThePrisoner: function (n, m, s) {
 
-        if (m / n > 0) {
-            let reminder = m % n;
-            if (reminder != 0) {
-                if (s == n) {
-                    s = reminder;
-                } else {
-                    s = s + reminder;
-                    if (s > n) {
-                        s = s - n;
-                    }
-                }
-            } else {
-                s = (s == n) ? n : Math.abs(s - n);               
-
+        let a = s + m - 1;
+        if (a > n) {
+            if (a % n == 0) {
+                return n;
             }
-        } else {
-            s = m + (m - s);
+            return a % n;
         }
-
-        return s;
+    
+        return a;
 
 
     },
@@ -61,9 +50,7 @@ module.exports ={
             initialShared = Math.floor(initialShared / 2) * 3;
             intialLiked = Math.floor(initialShared / 2);
             initialCumulative += intialLiked;
-            console.log(initialShared, intialLiked, initialCumulative);
         }
-        console.log('initialShared ' + initialShared);
         return initialShared;
     },
 
@@ -110,13 +97,11 @@ module.exports ={
 
             keyboards = keyboards.filter(x => x != keyboardMax);
         }
-        console.log(max > 0 ? max : -1);
         return max > 0 ? max : -1;
 
     },
 
     countingValleys: function (s) {
-        // let s = 'UDDDUDUU';
 
         let currLevel = 0;
         let valleys = 0;
@@ -139,9 +124,9 @@ module.exports ={
         return valleys;
     },
 
-    pageCount: function () {
-        let n = 4; //--> 3810// 95073 --> 8720
-        let p = 4;          // 17440
+    pageCount: function (n,p) {
+        // let n = 4; //--> 3810// 95073 --> 8720
+        // let p = 4;          // 17440
 
         let fromFirst = 0;
         let fromLast = 0;

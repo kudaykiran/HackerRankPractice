@@ -247,6 +247,47 @@ describe('Logic file', function() {
       it('should return 1 results when this UDDDUDUU value  present', function() {
         assert.equal(fourstar.countingValleys('UDDDUDUU'), 1);
       });
+      it('should return 0 results when this UDDDDDUU value  present', function() {
+        assert.equal(fourstar.countingValleys('UDDDDDUU'), 0);
+      });
+      it('should return 0 results when this UDDD value  present', function() {
+        assert.equal(fourstar.countingValleys('UDDD'), 0);
+      });
+    });
+
+    describe('pageCount ', function() {
+      it('should return 1 results when this 6,2 value  present', function() {
+        assert.equal(fourstar.pageCount(6,2), 1);
+      });
+      it('should return 0 results when this 5,4value  present', function() {
+        assert.equal(fourstar.pageCount(5,4), 0);
+      });
+      it('should return 0 results when this 4,4 value  present', function() {
+        assert.equal(fourstar.pageCount(4,4), 0);
+      });
+      it('should return 0 results when this 5,1 value  present', function() {
+        assert.equal(fourstar.pageCount(5,1), 0);
+      });
+      it('should return 1 results when this 7,3 value  present', function() {
+        assert.equal(fourstar.pageCount(7,3), 1);
+      });
+      it('should return 1 results when this 6,5 value  present', function() {
+        assert.equal(fourstar.pageCount(6,5), 1);
+      });
+      it('should return 1 results when this 7,4 value  present', function() {
+        assert.equal(fourstar.pageCount(7,4), 1);
+      });
+      it('should return 1 results when this 6,4 value  present', function() {
+        assert.equal(fourstar.pageCount(6,4), 1);
+      });
+
+      it('should return 3810 results when this 37455,29835 value  present', function() {
+        assert.equal(fourstar.pageCount(37455,29835), 3810);
+      });
+
+      it('should return 8720 results when this 95073,17440 value  present', function() {
+        assert.equal(fourstar.pageCount(95073,17440), 8720);
+      });
     });
 
     describe('viralAdvertising ', function() {
@@ -277,12 +318,20 @@ describe('Logic file', function() {
     });
 
     describe('saveThePrisoner ', function() {
-      it('should return 3 results when this 5,2,1 value  present', function() {
-        assert.equal(fourstar.saveThePrisoner(5,2,1), 3);
+      it('should return 2 results when this 5,2,1 value  present', function() {
+        assert.equal(fourstar.saveThePrisoner(5,2,1), 2);
       });
 
-      it('should return 7 results when this 7,19,2 value  present', function() {
-        assert.equal(fourstar.saveThePrisoner(7,19,2), 7);
+      it('should return 3 results when this 5,2,2 value  present', function() {
+        assert.equal(fourstar.saveThePrisoner(5,2,2), 3);
+      });
+
+      it('should return 3 results when this 3,7,3 value  present', function() {
+        assert.equal(fourstar.saveThePrisoner(3,7,3), 3);
+      });
+
+      it('should return 6 results when this 7,19,2 value  present', function() {
+        assert.equal(fourstar.saveThePrisoner(7,19,2), 6);
       });
 
       

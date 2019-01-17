@@ -77,7 +77,11 @@ var logic= require("./logic");
     // console.log(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
 
     // console.log(logic.hackerrankInString('Rhackerank'));
-    console.log(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'));
+    // console.log(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'));
+
+    var threeDatas =  data.split('\n');
+
+    console.log(logic.gemstones(threeDatas));
 
 
   });

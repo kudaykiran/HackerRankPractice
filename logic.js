@@ -2,6 +2,11 @@ var fiveStar = require("./fivestar");
 var fourstar = require("./fourstar");
 
 module.exports = {
+
+    gemstones: function(arr){
+        return fourstar.gemstones(arr);
+    },
+
     pangrams: function(s){       
         return fiveStar.pangrams(s);
     },

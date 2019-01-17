@@ -283,5 +283,16 @@ describe('Logic file', function() {
       
       
     });
+
+    describe('gemstones ', function() {
+      it('should return 2 results when this abcdde,baccd,eeabg value  present', function() {
+        assert.equal(logic.gemstones(['abcdde','baccd','eeabg']), 2);
+      });
+      it('should return 1 results when this aacdde,aaccd,eeaag value  present', function() {
+        assert.equal(logic.gemstones(['aacdde','aaccd','eeaag']), 1);
+      });
+      
+      
+    });
     
   });

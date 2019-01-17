@@ -1,4 +1,31 @@
 module.exports ={
+
+    gemstones: function(arr){
+        let sample = arr[0].split('');
+        let count =0;
+        let ele = [];
+        for(let i = 0; i<sample.length;i++){
+            if(check(sample[i], arr) == 'Y'){
+                if(!ele.some(x => x ==  sample[i])){
+                    ele.push(sample[i]);
+                    count++;
+                }
+            }
+        }
+
+        function check(elemt, arr){
+            let Val = 'Y';
+            for(let i =0; i < arr.length;i++){
+                if(!arr[i].includes(elemt)){
+                    return 'N';
+                } 
+            }
+
+            return Val;
+        }
+
+        return count;
+    },
     saveThePrisoner: function (n, m, s) {
 
         if (m / n > 0) {

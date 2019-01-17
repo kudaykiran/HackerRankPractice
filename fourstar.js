@@ -40,11 +40,7 @@ module.exports ={
                     }
                 }
             } else {
-                if (s == n) {
-                    s = n;
-                } else {
-                    s = Math.abs(s - n);
-                }
+                s = (s == n) ? n : Math.abs(s - n);               
 
             }
         } else {
@@ -100,7 +96,6 @@ module.exports ={
 
     getMoneySpent: function (b, keyboards, drives) {
         
-
         let max = 0;
 
         while (keyboards.length > 0) {
@@ -184,4 +179,70 @@ module.exports ={
 
         return parseInt(fromFirst) > parseInt(fromLast) ? fromLast : fromFirst;
     },
+
+    appendAndDelete: function(s, t, k){
+        let isPossible = '';
+        let returnedIndex = 0;
+        let unmatchedInd = 0;
+
+        if( s.length > t.length){
+            
+            if(t.length == 1 && s.split('').some(x => x != t)){
+                unmatchedInd = unmatchedInd
+            } else {
+                unmatchedInd = s.split('').reduce((p,c,index) => {
+                    let c1=  t[index];
+                    if(s[index] == t[index] ){
+                        returnedIndex =  index;
+                    }
+                    if(index > returnedIndex && t[index] == undefined){
+                        returnedIndex = 0;
+                    }
+                    return returnedIndex;
+                } ,0);
+            }
+            if(unmatchedInd != 0) {
+                let lengthOfRemaingOfFirst = s.slice(unmatchedInd,s.length).length;
+                let lengthOfRemaingOfSecond = t.slice(unmatchedInd,s.length).length;
+                if(lengthOfRemaingOfFirst + lengthOfRemaingOfSecond + 2 == k ){
+                    isPossible = 'Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            } else {
+                if(s.length - t.length < k){
+                    isPossible = 'Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            }
+        }  else if(s.length < t.length){
+            if(s.split('').every(x => x == s[0]) && t.split('').every(x => x == s[0])){
+                if((t.length - s.length)%2 == 0){
+                    isPossible ='Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            } else {
+                if((t.length - s.length) == k){
+                    isPossible ='Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            }           
+
+        } else {
+            if(s == t){
+                isPossible ='Yes';
+            } else {
+                if((t.length + s.length) <= k){
+                    isPossible ='Yes';
+                } else {
+                    isPossible = 'No';
+                }
+            }
+        }
+
+        return isPossible;
+    },  
 }

@@ -3,6 +3,7 @@ var logic = require('../logic');
 
 var fiveStar = require("../fivestar");
 var fourstar = require("../fourstar");
+var threestar = require("../threestar");
 
 describe('Logic file', function() {
     describe('jumpingOnCloudsEmma ', function() {
@@ -86,56 +87,56 @@ describe('Logic file', function() {
 
     describe('appendAndDelete ', function() {
       it('should return No results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('ashley','ash'
+        assert.equal(fourstar.appendAndDelete('ashley','ash'
         ,2), 'No');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('aba'
+        assert.equal(fourstar.appendAndDelete('aba'
         ,'aba'
         ,7), 'Yes');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('hackerhappy'
+        assert.equal(fourstar.appendAndDelete('hackerhappy'
         ,'hackerrank'
         ,7), 'Yes');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('aaaaaaaaaa','aaaaa',7), 'Yes');
+        assert.equal(fourstar.appendAndDelete('aaaaaaaaaa','aaaaa',7), 'Yes');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('zzzzz','zzzzzzz',4), 'Yes');
+        assert.equal(fourstar.appendAndDelete('zzzzz','zzzzzzz',4), 'Yes');
       });
 
       it('should return No results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('qwerasdf','qwerbsdf',6), 'No');
+        assert.equal(fourstar.appendAndDelete('qwerasdf','qwerbsdf',6), 'No');
       });
 
       it('should return No results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('y','yu',2), 'No');
+        assert.equal(fourstar.appendAndDelete('y','yu',2), 'No');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('qwerty','zxcvbn',100), 'Yes');
+        assert.equal(fourstar.appendAndDelete('qwerty','zxcvbn',100), 'Yes');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('abcdef','fedcba',15), 'Yes');
+        assert.equal(fourstar.appendAndDelete('abcdef','fedcba',15), 'Yes');
       });
 
       it('should return No results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('abcd','abcdert',10), 'No');
+        assert.equal(fourstar.appendAndDelete('abcd','abcdert',10), 'No');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('aaa','a',10), 'Yes');
+        assert.equal(fourstar.appendAndDelete('aaa','a',10), 'Yes');
       });
 
       it('should return Yes results when this  value  present', function() {
-        assert.equal(logic.appendAndDelete('asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
+        assert.equal(fourstar.appendAndDelete('asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
         ,'asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
         ,100), 'Yes');
       });
@@ -180,36 +181,36 @@ describe('Logic file', function() {
     
     describe('dayOfProgrammer ', function() {
       it('should return 13.09.1917 results when this 1927 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(1917), '13.09.1917');
+        assert.equal(threestar.dayOfProgrammer(1917), '13.09.1917');
       });
       it('should return 13.09.2017 results when this 2017 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(2017), '13.09.2017');
+        assert.equal(threestar.dayOfProgrammer(2017), '13.09.2017');
       });
       it('should return 12.09.2016 results when this 2016 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(2016), '12.09.2016');
+        assert.equal(threestar.dayOfProgrammer(2016), '12.09.2016');
       });
       it('should return 12.09.1800 results when this 1800 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(1800), '12.09.1800');
+        assert.equal(threestar.dayOfProgrammer(1800), '12.09.1800');
       });
 
       it('should return 12.09.1800 results when this 1699 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(1699), '12.09.1699');
+        assert.equal(threestar.dayOfProgrammer(1699), '12.09.1699');
       });
 
       it('should return 12.09.1800 results when this 2000 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(2000), '12.09.2000');
+        assert.equal(threestar.dayOfProgrammer(2000), '12.09.2000');
       });
 
       it('should return 12.09.1700 results when this 2000 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(1700), '12.09.1700');
+        assert.equal(threestar.dayOfProgrammer(1700), '12.09.1700');
       });
 
       it('should return 13.09.1919 results when this 1919 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(1919), '13.09.1919');
+        assert.equal(threestar.dayOfProgrammer(1919), '13.09.1919');
       });
 
       it('should return 26.09.1918 results when this 1918 value  present', function() {
-        assert.equal(logic.dayOfProgrammer(1918), '26.09.1918');
+        assert.equal(threestar.dayOfProgrammer(1918), '26.09.1918');
       });
     });
 
@@ -224,11 +225,21 @@ describe('Logic file', function() {
 
     describe('sockMerchant ', function() {
       it('should return 3 results when this 10, 20, 20, 10, 10, 30, 50, 10, 20 value  present', function() {
-        assert.equal(logic.sockMerchant([10, 20, 20, 10, 10, 30, 50, 10, 20]), 3);
+        assert.equal(threestar.sockMerchant([10, 20, 20, 10, 10, 30, 50, 10, 20]), 3);
       });
 
       it('should return 4 results when this 1, 1, 3, 1, 2, 1, 3, 3, 3, 3 value  present', function() {
-        assert.equal(logic.sockMerchant([1, 1, 3, 1, 2, 1, 3, 3, 3, 3]), 4);
+        assert.equal(threestar.sockMerchant([1, 1, 3, 1, 2, 1, 3, 3, 3, 3]), 4);
+      });
+    });
+
+    describe('birdsProblem ', function() {
+      it('should return 4 results when this 1 4 4 4 5 3 value  present', function() {
+        assert.equal(threestar.birdsProblem('1 4 4 4 5 3'),4);
+      });
+
+      it('should return 3 results when this 1 2 3 4 5 4 3 2 1 3 4 value  present', function() {
+        assert.equal(threestar.birdsProblem('1 2 3 4 5 4 3 2 1 3 4'), 3);
       });
     });
 

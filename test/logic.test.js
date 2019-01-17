@@ -45,15 +45,15 @@ describe('Logic file', function() {
 
     describe('libraryFine ', function() {
       it('should return 45 results when this 9,6,2015,6,6,2015 value  present', function() {
-        assert.equal(logic.libraryFine(9,6,2015,6,6,2015), 45);
+        assert.equal(logic.libraryFine('9,6,2015,6,6,2015'), 45);
       });
 
       it('should return 500 results when this 9,6,2015,6,6,2015 value  present', function() {
-        assert.equal(logic.libraryFine(9,7,2015,6,6,2015), 500);
+        assert.equal(logic.libraryFine('9,7,2015,6,6,2015'), 500);
       });
 
       it('should return 10000 results when this (1,6,2018,31,8,2017) value  present', function() {
-        assert.equal(logic.libraryFine(1,6,2018,31,8,2017), 10000);
+        assert.equal(logic.libraryFine('1,6,2018,31,8,2017'), 10000);
       });
     });
 
@@ -68,8 +68,12 @@ describe('Logic file', function() {
       it('should return 3 results when this (3,17) value  present', function() {
         assert.equal(logic.squares(3,17), 3);
       });
-      it('should return  results when this (4,4) value  present', function() {
+      it('should return 1 results when this (4,4) value  present', function() {
         assert.equal(logic.squares(4,4), 1);
+      });
+
+      it('should return 0 results when this (41,41) value  present', function() {
+        assert.equal(logic.squares(41,41), 0);
       });
     });
 
@@ -340,6 +344,9 @@ describe('Logic file', function() {
     describe('serviceLane ', function() {
       it('should return 5 results when this below value  present', function() {
         assert.equal(logic.serviceLane([ 2, 3, 1, 2, 3, 2, 3, 3 ] ,[ [ 0, 3 ], [ 4, 6 ], [ 6, 7 ], [ 3, 5 ], [ 0, 7 ] ]).length, 5);
+      });
+      it('should return 2 results when this below value  present', function() {
+        assert.equal(logic.serviceLane([ 2, 3, 1] ,[ [ 0, 3 ],[ 0, 7 ] ]).length, 2);
       });
     });
 

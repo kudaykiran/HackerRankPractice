@@ -33,7 +33,16 @@ module.exports = {
         return numOfCuts;
     },
 
-    libraryFine: function(d1, m1, y1, d2, m2, y2){
+    libraryFine: function(value){
+        let val = value.split(',');
+        let d1, m1, y1, d2, m2, y2;
+        d1 = parseInt(val[0]);
+        m1 = parseInt(val[1]);
+        y1 = parseInt(val[2]);
+        d2 = parseInt(val[3]);
+        m2 = parseInt(val[4]);
+        y2 = parseInt(val[5]);
+
         let fine = 0;
         let date = 15;
         let month = 500;
@@ -199,22 +208,6 @@ module.exports = {
         return values;
     },
 
-    recursion: function () {
-        let list = [1, 2, 3, 4, 5];
-        let accumulator = 0;
-
-        function sum(list, accumulator) {
-            if (list.length == 0) {
-                return accumulator;
-            }
-
-            return sum(list.slice(1), accumulator + list[0]);
-        }
-
-        sum(list, accumulator); // 15
-        list; // [1, 2, 3, 4, 5]
-        accumulator; // 0
-    },
     magicNumber: function (n) {
         // Taking all cobination in an Array
         let combination = [[8, 1, 6, 3, 5, 7, 4, 9, 2],

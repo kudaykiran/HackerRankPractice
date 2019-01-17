@@ -24,9 +24,15 @@ describe('Logic file', function() {
       it('should return 4 results when ths [1, 2, 3, 4, 3, 3, 2, 1] value  present', function() {
         assert.equal(logic.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]).length, 4);
       });
+      it('should return 4 results when ths [5, 4, 4, 2, 2, 8] value  present', function() {
+        assert.equal(logic.cutTheSticks([5, 4, 4, 2, 2, 8]).length, 4);
+      });
     });
 
     describe('libraryFine ', function() {
+      it('should return 45 results when this 9,6,2015,6,6,2015 value  present', function() {
+        assert.equal(logic.libraryFine(9,6,2015,6,6,2015), 45);
+      });
       it('should return 10000 results when this (1,6,2018,31,8,2017) value  present', function() {
         assert.equal(logic.libraryFine(1,6,2018,31,8,2017), 10000);
       });
@@ -58,6 +64,23 @@ describe('Logic file', function() {
     });
 
     describe('appendAndDelete ', function() {
+      it('should return No results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('ashley','ash'
+        ,2), 'No');
+      });
+
+      it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('aba'
+        ,'aba'
+        ,7), 'Yes');
+      });
+
+      it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('hackerhappy'
+        ,'hackerrank'
+        ,7), 'Yes');
+      });
+
       it('should return Yes results when this  value  present', function() {
         assert.equal(logic.appendAndDelete('asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
         ,'asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
@@ -75,17 +98,29 @@ describe('Logic file', function() {
       it('should return length 3 results when this 2, 3, 1 value  present', function() {
         assert.equal(logic.permutationEquation([ 2, 3, 1 ]).length, 3);
       });
+
+      it('should return length 5 results when this 4 3 5 1 2 value  present', function() {
+        assert.equal(logic.permutationEquation([ 4, 3, 5, 1, 2]).length, 5);
+      });
     });
 
     describe('climbingLeaderboard ', function() {
       it('should return length 4 results when this [100, 100, 50, 40, 40, 20, 10],[5 ,25 ,50, 120] value  present', function() {
         assert.equal(logic.climbingLeaderboard([100, 100, 50, 40, 40, 20, 10],[5 ,25 ,50, 120]).length, 4);
       });
+
+      it('should return length 5 results when this [100 ,90 ,90 ,80 ,75 ,60],[50, 65, 77, 90, 102] value  present', function() {
+        assert.equal(logic.climbingLeaderboard([100 ,90 ,90 ,80 ,75 ,60],[50, 65, 77, 90, 102]).length, 5);
+      });
     });
 
     describe('circularArrayRotation ', function() {
       it('should return length 3 results when this [ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ] value  present', function() {
         assert.equal(logic.circularArrayRotation([ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ]).length, 3);
+      });
+
+      it('should return length 3 results when this [ 1, 2, 3] ,2, [ 0, 1, 2 ] value  present', function() {
+        assert.equal(logic.circularArrayRotation([ 1, 2, 3 ] ,2, [ 0, 1, 2 ]).length, 3);
       });
     });
 
@@ -138,6 +173,7 @@ describe('Logic file', function() {
           4,
           5 ), -1);
       });
+
     });
 
     describe('utopianTree ', function() {

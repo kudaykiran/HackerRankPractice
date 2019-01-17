@@ -107,9 +107,7 @@ module.exports ={
             let keyboardMax = Math.max(...keyboards);
             let maxValues = drives.map(x => x + keyboardMax);
             for (let x = 0; x < drives.length; x++) {
-                // if(maxValues[x] == 374625){
-                //     console.log('374625');
-                // }
+                
                 if (maxValues[x] > max && maxValues[x] <= b) {
                     max = maxValues[x];
                 }

@@ -18,6 +18,13 @@ describe('Logic file', function() {
       it('should return Not Funny when ths bcxz value  present', function() {
         assert.equal(fiveStar.funnyString('bcxz'), 'Not Funny');
       });
+      it('should return Not Funny when ths ivvkxq value  present', function() {
+        assert.equal(fiveStar.funnyString('ivvkxq'), 'Not Funny');
+      });
+      it('should return Not Funny when ths ivvkx value  present', function() {
+        assert.equal(fiveStar.funnyString('ivvkx'), 'Not Funny');
+      });
+
     });
 
     describe('cutTheSticks ', function() {

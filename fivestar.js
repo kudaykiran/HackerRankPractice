@@ -121,20 +121,18 @@ module.exports = {
     },
 
     funnyString: function (s){
-        let mainString = s.split('');
-        let reverseChar = s.split('').reverse();
         let ansciValueOfString = [];
         let ansciValueOfReverseString = [];
 
         ansciValueOfString.push(
 
-            mainString.map((x) => x.charCodeAt(0))
+            s.split('').map((x) => x.charCodeAt(0))
             
         );
 
         ansciValueOfReverseString.push(
 
-            reverseChar.map((x) => x.charCodeAt(0))
+            s.split('').reverse().map((x) => x.charCodeAt(0))
             
         );
 
@@ -142,8 +140,6 @@ module.exports = {
 
          
         for(let i =0; i<ansciValueOfString[0].length; i++){
-            let c1=  Math.abs(ansciValueOfString[0][i + 1] - ansciValueOfString[0][i]);
-            let c2= Math.abs (ansciValueOfReverseString[0][i + 1] - ansciValueOfReverseString[0][i]);
             
             if(ansciValueOfString[0][i + 1]  == undefined) {
                 return isFunnyOrNot == '' ? 'Not Funny' :  isFunnyOrNot;

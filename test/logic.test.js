@@ -8,6 +8,15 @@ describe('Logic file', function() {
       });
     });
 
+    describe('funnyString ', function() {
+      it('should return Funny when ths acxz value  present', function() {
+        assert.equal(logic.funnyString('acxz'), 'Funny');
+      });
+      it('should return Not Funny when ths bcxz value  present', function() {
+        assert.equal(logic.funnyString('bcxz'), 'Not Funny');
+      });
+    });
+
     describe('cutTheSticks ', function() {
       it('should return 4 results when ths [1, 2, 3, 4, 3, 3, 2, 1] value  present', function() {
         assert.equal(logic.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]).length, 4);
@@ -37,8 +46,11 @@ describe('Logic file', function() {
     });
 
     describe('jumpingOnClouds ', function() {
-      it('should return 0 results when this (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) value  present', function() {
+      it('should return 52 results when this (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) value  present', function() {
         assert.equal(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1), 52);
+      });
+      it('should return 92 results when this [ 0 ,0 ,1 ,0 ,0 ,1 ,1 ,0 ], 2 value  present', function() {
+        assert.equal(logic.jumpingOnClouds([ 0 ,0 ,1 ,0 ,0 ,1 ,1 ,0 ], 2), 92);
       });
     });
 
@@ -59,6 +71,18 @@ describe('Logic file', function() {
     describe('permutationEquation ', function() {
       it('should return length 3 results when this 2, 3, 1 value  present', function() {
         assert.equal(logic.permutationEquation([ 2, 3, 1 ]).length, 3);
+      });
+    });
+
+    describe('climbingLeaderboard ', function() {
+      it('should return length 4 results when this [100, 100, 50, 40, 40, 20, 10],[5 ,25 ,50, 120] value  present', function() {
+        assert.equal(logic.climbingLeaderboard([100, 100, 50, 40, 40, 20, 10],[5 ,25 ,50, 120]).length, 4);
+      });
+    });
+
+    describe('circularArrayRotation ', function() {
+      it('should return length 3 results when this [ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ] value  present', function() {
+        assert.equal(logic.circularArrayRotation([ 1, 2, 3,4,5,6,7,8,9,10 ] ,18, [ 0, 1, 2 ]).length, 3);
       });
     });
 

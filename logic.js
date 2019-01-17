@@ -458,8 +458,10 @@ module.exports = {
         });
 
         console.log(positions);
+        return positions;
 
     },
+
     circularArrayRotation: function (a, k, queries) {
         // a= 214;
         // k = 1;
@@ -478,23 +480,7 @@ module.exports = {
                 a = [...reverse];
             }
 
-            // if(a.length > k){
-            //     if(a.length/k>=2 && a.length%k !=0){
-            //         k = a.length%k;
-            //     }
-            // } else {
-            //     if(k/a.length>=2  && k%a.length !=0){
-            //         k = k%a.length;
-            //     }
-            // }
-
-            // while (k > 0) { 
-            //     let lastOne = a.pop();
-            //     reverse = [...a];
-            //     reverse.unshift(lastOne)
-            //     a = [...reverse];
-            //     k--;
-            // }
+            
         }
         let elements = [];
         for (let i = 0; i < queries.length; i++) {
@@ -559,51 +545,11 @@ module.exports = {
                 return c;
             }, 0));
 
-            // for(let j= 0; j<eacharr.length ;j++){
-            //     maxdiffer += Math.abs(eacharr[j] - n[j]);
-            // }
-            // arMaxdif.push(maxdiffer);
         });
 
         return Math.min(...arMaxdif)
 
-        let matchingCount = [];
 
-        // For each array maching maximum number of matching with
-        // passed value
-        combination.map(eachArray => {
-            let count = 0;
-
-            for (let each = 0; each < eachArray.length; each++) {
-                if (eachArray[each] == n[each]) {
-                    count++;
-                }
-            }
-            matchingCount.push(count);
-
-        });
-
-        let maxdiffValues = [];
-
-        let maxMatching = Math.max(...matchingCount);
-        for (let position = 0; position < matchingCount.length; position++) {
-            if (matchingCount[position] == maxMatching) {
-                let matchedArr = combination[position];
-                let maxdiff = 0;
-                for (let i = 0; i < matchedArr.length; i++) {
-                    if (matchedArr[i] != n[i]) {
-                        maxdiff += Math.abs(matchedArr[i] - n[i]);
-                    }
-                }
-
-                maxdiffValues.push(maxdiff);
-
-            }
-        }
-
-
-        let val = Math.min(...maxdiffValues)
-        return val;
     },
 
     serviceLane: function (n, cases) {

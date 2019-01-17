@@ -62,9 +62,19 @@ describe('Logic file', function() {
       });
     });
 
+    
     describe('dayOfProgrammer ', function() {
       it('should return 13.09.1917 results when this 1927 value  present', function() {
         assert.equal(logic.dayOfProgrammer(1917), '13.09.1917');
+      });
+      it('should return 13.09.2017 results when this 2017 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(2017), '13.09.2017');
+      });
+      it('should return 12.09.2016 results when this 2016 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(2016), '12.09.2016');
+      });
+      it('should return 12.09.1800 results when this 1800 value  present', function() {
+        assert.equal(logic.dayOfProgrammer(1800), '12.09.1800');
       });
     });
 
@@ -72,12 +82,59 @@ describe('Logic file', function() {
       it('should return Mouse C results when this 1,3,2 value  present', function() {
         assert.equal(logic.catAndMouse(1 ,3 ,2), 'Mouse C');
       });
+      it('should return Cat B results when this 1,2,3 value  present', function() {
+        assert.equal(logic.catAndMouse(1 ,2 ,3), 'Cat B');
+      });
+    });
+
+    describe('sockMerchant ', function() {
+      it('should return 3 results when this 10, 20, 20, 10, 10, 30, 50, 10, 20 value  present', function() {
+        assert.equal(logic.sockMerchant([10, 20, 20, 10, 10, 30, 50, 10, 20]), 3);
+      });
+    });
+
+    describe('countingValleys ', function() {
+      it('should return 1 results when this UDDDUDUU value  present', function() {
+        assert.equal(logic.countingValleys('UDDDUDUU'), 1);
+      });
+    });
+
+    describe('viralAdvertising ', function() {
+      it('should return 9 results when this 3 value  present', function() {
+        assert.equal(logic.viralAdvertising(3), 9);
+      });
+    });
+
+    describe('getMoneySpent ', function() {
+      it('should return -1 results when this 5,1,1,4,5 value  present', function() {
+        assert.equal(logic.getMoneySpent([5,1,1],
+          4,
+          5 ), -1);
+      });
+    });
+
+    describe('utopianTree ', function() {
+      it('should return 1 results when this 0 value  present', function() {
+        assert.equal(logic.utopianTree(0), 1);
+      });
+      it('should return 2 results when this 1 value  present', function() {
+        assert.equal(logic.utopianTree(1), 2);
+      });
+      it('should return 7 results when this 4 value  present', function() {
+        assert.equal(logic.utopianTree(4), 7);
+      });
     });
 
     describe('saveThePrisoner ', function() {
       it('should return 3 results when this 5,2,1 value  present', function() {
         assert.equal(logic.saveThePrisoner(5,2,1), 3);
       });
+
+      it('should return 7 results when this 7,19,2 value  present', function() {
+        assert.equal(logic.saveThePrisoner(7,19,2), 7);
+      });
+
+      
     });
 
     describe('serviceLane ', function() {

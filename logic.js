@@ -763,8 +763,8 @@ module.exports = {
         return parseInt(fromFirst) > parseInt(fromLast) ? fromLast : fromFirst;
     },
 
-    countingValleys: function () {
-        let s = 'UDDDUDUU';
+    countingValleys: function (s) {
+        // let s = 'UDDDUDUU';
 
         let currLevel = 0;
         let valleys = 0;
@@ -788,9 +788,7 @@ module.exports = {
     },
 
     getMoneySpent: function (b, keyboards, drives) {
-        // let b= 5;
-        // let keyboards=[5];
-        // let drives = [4];
+        
 
         let max = 0;
 
@@ -809,6 +807,8 @@ module.exports = {
             keyboards = keyboards.filter(x => x != keyboardMax);
         }
         console.log(max > 0 ? max : -1);
+        return max > 0 ? max : -1;
+
     },
 
     catAndMouse: function (x, y, z) {
@@ -853,6 +853,7 @@ module.exports = {
             console.log(initialShared, intialLiked, initialCumulative);
         }
         console.log('initialShared ' + initialShared);
+        return initialShared;
     },
 
     saveThePrisoner: function (n, m, s) {

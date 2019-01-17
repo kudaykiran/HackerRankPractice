@@ -1,6 +1,9 @@
 var http = require("http");
 var logic= require("./logic");
 
+var fiveStar = require("./fivestar");
+var fourstar = require("./fourstar");
+
 // Make sure we got a filename on the command line.
 // if (process.argv.length < 3) {
 //     console.log('Usage: node ' + process.argv[1] + ' FILENAME');
@@ -81,7 +84,7 @@ var logic= require("./logic");
 
     var threeDatas =  data.split('\n');
 
-    console.log(logic.gemstones(threeDatas));
+    console.log(fourstar.gemstones(threeDatas));
 
 
   });

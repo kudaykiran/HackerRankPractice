@@ -3,50 +3,13 @@ var fourstar = require("./fourstar");
 
 module.exports = {
 
-    gemstones: function(arr){
-        return fourstar.gemstones(arr);
-    },
 
-    pangrams: function(s){       
-        return fiveStar.pangrams(s);
-    },
-
-    hackerrankInString: function(s){
-        return fiveStar.hackerrankInString(s);
-    },
-
-    marsExploration : function(s) {
-        return fiveStar.marsExploration(s);    
-    },
 
     camelcase : function(s){
         let numOfWords = s.replace(/[^A-Z]/g, "").length;
         return numOfWords + 1;
     },
 
-    timeInWords: function(h, m){       
-        return fiveStar.timeInWords(h,m);
-    },
-
-    funnyString: function (s){
-       
-        return fiveStar.funnyString(s);
-    },
-
-    minimumDistances : function(a) {
-        return fiveStar.minimumDistances(a);
-    },
-
-    jumpingOnCloudsEmma: function (c) {
-        
-        return fiveStar.jumpingOnCloudsEmma(c);
-    },
-
-    jumpingOnClouds: function(c, k){
-        
-        return fiveStar.jumpingOnClouds(c,k)
-
-    },
 
     cutTheSticks: function(arr){
         let minLength = Math.min(...arr);
@@ -465,31 +428,5 @@ module.exports = {
 
     },
 
-    pageCount: function () {
-        return fourstar.pageCount();
-    },
 
-    countingValleys: function (s) {
-        return fourstar.countingValleys(s);
-    },
-
-    getMoneySpent: function (b, keyboards, drives) {
-        return fourstar.getMoneySpent(b,keyboards,drives);
-    },
-
-    catAndMouse: function (x, y, z) {
-       return fourstar.catAndMouse(x,y,z);
-    },
-
-    utopianTree: function (n) {
-        return fourstar.utopianTree(n);
-    },
-
-    viralAdvertising: function (n = 6) {        
-        return fourstar.viralAdvertising(n);
-    },
-
-    saveThePrisoner: function (n, m, s) {
-        return fourstar.saveThePrisoner(n,m,s);
-    }
 }

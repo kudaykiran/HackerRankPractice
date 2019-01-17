@@ -1,19 +1,22 @@
-var logic= require("../logic");
 var assert = require('assert');
+var logic = require('../logic');
+
+var fiveStar = require("../fivestar");
+var fourstar = require("../fourstar");
 
 describe('Logic file', function() {
     describe('jumpingOnCloudsEmma ', function() {
       it('should return 3 when ths [0, 0, 0, 1,0, 0] value  present', function() {
-        assert.equal(logic.jumpingOnCloudsEmma([0, 0, 0, 1,0, 0]), 3);
+        assert.equal(fiveStar.jumpingOnCloudsEmma([0, 0, 0, 1,0, 0]), 3);
       });
     });
 
     describe('funnyString ', function() {
       it('should return Funny when ths acxz value  present', function() {
-        assert.equal(logic.funnyString('acxz'), 'Funny');
+        assert.equal(fiveStar.funnyString('acxz'), 'Funny');
       });
       it('should return Not Funny when ths bcxz value  present', function() {
-        assert.equal(logic.funnyString('bcxz'), 'Not Funny');
+        assert.equal(fiveStar.funnyString('bcxz'), 'Not Funny');
       });
     });
 
@@ -47,10 +50,10 @@ describe('Logic file', function() {
 
     describe('jumpingOnClouds ', function() {
       it('should return 52 results when this (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) value  present', function() {
-        assert.equal(logic.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1), 52);
+        assert.equal(fiveStar.jumpingOnClouds([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ], 1), 52);
       });
       it('should return 92 results when this [ 0 ,0 ,1 ,0 ,0 ,1 ,1 ,0 ], 2 value  present', function() {
-        assert.equal(logic.jumpingOnClouds([ 0 ,0 ,1 ,0 ,0 ,1 ,1 ,0 ], 2), 92);
+        assert.equal(fiveStar.jumpingOnClouds([ 0 ,0 ,1 ,0 ,0 ,1 ,1 ,0 ], 2), 92);
       });
     });
 
@@ -104,10 +107,10 @@ describe('Logic file', function() {
 
     describe('catAndMouse ', function() {
       it('should return Mouse C results when this 1,3,2 value  present', function() {
-        assert.equal(logic.catAndMouse(1 ,3 ,2), 'Mouse C');
+        assert.equal(fourstar.catAndMouse(1 ,3 ,2), 'Mouse C');
       });
       it('should return Cat B results when this 1,2,3 value  present', function() {
-        assert.equal(logic.catAndMouse(1 ,2 ,3), 'Cat B');
+        assert.equal(fourstar.catAndMouse(1 ,2 ,3), 'Cat B');
       });
     });
 
@@ -119,19 +122,19 @@ describe('Logic file', function() {
 
     describe('countingValleys ', function() {
       it('should return 1 results when this UDDDUDUU value  present', function() {
-        assert.equal(logic.countingValleys('UDDDUDUU'), 1);
+        assert.equal(fourstar.countingValleys('UDDDUDUU'), 1);
       });
     });
 
     describe('viralAdvertising ', function() {
       it('should return 9 results when this 3 value  present', function() {
-        assert.equal(logic.viralAdvertising(3), 9);
+        assert.equal(fourstar.viralAdvertising(3), 9);
       });
     });
 
     describe('getMoneySpent ', function() {
       it('should return -1 results when this 5,1,1,4,5 value  present', function() {
-        assert.equal(logic.getMoneySpent([5,1,1],
+        assert.equal(fourstar.getMoneySpent([5,1,1],
           4,
           5 ), -1);
       });
@@ -139,23 +142,23 @@ describe('Logic file', function() {
 
     describe('utopianTree ', function() {
       it('should return 1 results when this 0 value  present', function() {
-        assert.equal(logic.utopianTree(0), 1);
+        assert.equal(fourstar.utopianTree(0), 1);
       });
       it('should return 2 results when this 1 value  present', function() {
-        assert.equal(logic.utopianTree(1), 2);
+        assert.equal(fourstar.utopianTree(1), 2);
       });
       it('should return 7 results when this 4 value  present', function() {
-        assert.equal(logic.utopianTree(4), 7);
+        assert.equal(fourstar.utopianTree(4), 7);
       });
     });
 
     describe('saveThePrisoner ', function() {
       it('should return 3 results when this 5,2,1 value  present', function() {
-        assert.equal(logic.saveThePrisoner(5,2,1), 3);
+        assert.equal(fourstar.saveThePrisoner(5,2,1), 3);
       });
 
       it('should return 7 results when this 7,19,2 value  present', function() {
-        assert.equal(logic.saveThePrisoner(7,19,2), 7);
+        assert.equal(fourstar.saveThePrisoner(7,19,2), 7);
       });
 
       
@@ -175,53 +178,53 @@ describe('Logic file', function() {
 
     describe('minimumDistances ', function() {
       it('should return -1 results when this 1, 2, 3, 4, 10 value  present', function() {
-        assert.equal(logic.minimumDistances([1, 2, 3, 4, 10]), -1);
+        assert.equal(fiveStar.minimumDistances([1, 2, 3, 4, 10]), -1);
       });
 
       it('should return 3 results when this 7 ,1 ,3 ,4 ,1, 7 value  present', function() {
-        assert.equal(logic.minimumDistances([7 ,1 ,3 ,4 ,1, 7]), 3);
+        assert.equal(fiveStar.minimumDistances([7 ,1 ,3 ,4 ,1, 7]), 3);
       });
     });
     
     describe('timeInWords ', function() {
       it('should return five o\' clock  results when this 5 00 value  present', function() {
-        assert.equal(logic.timeInWords(5, 00), 'five o\' clock');
+        assert.equal(fiveStar.timeInWords(5, 00), 'five o\' clock');
       });
 
       it('should return one minute past five  results when this 5 01 value  present', function() {
-        assert.equal(logic.timeInWords(5, 01), 'one minute past five');
+        assert.equal(fiveStar.timeInWords(5, 01), 'one minute past five');
       });
 
       it('should return nine minute past five  results when this 5 09 value  present', function() {
-        assert.equal(logic.timeInWords(5, 09), 'nine minute past five');
+        assert.equal(fiveStar.timeInWords(5, 09), 'nine minute past five');
       });
 
       it('should return nineteen minute past five  results when this 5 19 value  present', function() {
-        assert.equal(logic.timeInWords(5, 19), 'nineteen minute past five');
+        assert.equal(fiveStar.timeInWords(5, 19), 'nineteen minute past five');
       });
 
       it('should return quarter minute past five  results when this 5 15 value  present', function() {
-        assert.equal(logic.timeInWords(5, 15), 'quarter past five');
+        assert.equal(fiveStar.timeInWords(5, 15), 'quarter past five');
       });
 
       it('should return twenty one minutes past five  results when this 5 21 value  present', function() {
-        assert.equal(logic.timeInWords(5, 21), 'twenty one minutes past five');
+        assert.equal(fiveStar.timeInWords(5, 21), 'twenty one minutes past five');
       });
 
       it('should return half past five  results when this 5 30 value  present', function() {
-        assert.equal(logic.timeInWords(5, 30), 'half past five');
+        assert.equal(fiveStar.timeInWords(5, 30), 'half past five');
       });
 
       it('should return twenty nine minutes to six  results when this 5 31 value  present', function() {
-        assert.equal(logic.timeInWords(5, 31), 'twenty nine minutes to six');
+        assert.equal(fiveStar.timeInWords(5, 31), 'twenty nine minutes to six');
       });
 
       it('should return nineteen minutes to six  results when this 5 31 value  present', function() {
-        assert.equal(logic.timeInWords(5, 41), 'nineteen minutes to six');
+        assert.equal(fiveStar.timeInWords(5, 41), 'nineteen minutes to six');
       });
 
       it('should return three minutes to eleven  results when this 10 57 value  present', function() {
-        assert.equal(logic.timeInWords(10, 57), 'three minutes to eleven');
+        assert.equal(fiveStar.timeInWords(10, 57), 'three minutes to eleven');
       });
     });
 
@@ -236,49 +239,49 @@ describe('Logic file', function() {
 
     describe('marsExploration ', function() {
       it('should return 20 results when this OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS value  present', function() {
-        assert.equal(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'), 20);
+        assert.equal(fiveStar.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'), 20);
       });
       it('should return 12 results when this SOSOOSOSOSOSOSSOSOSOSOSOSOS value  present', function() {
-        assert.equal(logic.marsExploration('SOSOOSOSOSOSOSSOSOSOSOSOSOS'), 12);
+        assert.equal(fiveStar.marsExploration('SOSOOSOSOSOSOSSOSOSOSOSOSOS'), 12);
       });
       it('should return 26 results when this SSSSSSSSSSSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSO value  present', function() {
-        assert.equal(logic.marsExploration('SSSSSSSSSSSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSO'), 26);
+        assert.equal(fiveStar.marsExploration('SSSSSSSSSSSSSSSOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSO'), 26);
       });
       it('should return 14 results when this SOSSOSSSSOSOIEISOSPOISOSIUSISO value  present', function() {
-        assert.equal(logic.marsExploration('SOSSOSSSSOSOIEISOSPOISOSIUSISO'), 14);
+        assert.equal(fiveStar.marsExploration('SOSSOSSSSOSOIEISOSPOISOSIUSISO'), 14);
       });
       it('should return 67 results when this SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS value  present', function() {
-        assert.equal(logic.marsExploration('SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS'), 67);
+        assert.equal(fiveStar.marsExploration('SOSOSOSOSDSDSKWOSDOSDOASDOASDFAFJDFDOSOSOWNSOSOSNDSKDDOSOSOSJDSDSOOSOSDSDOSASSOASDSAOSOSODSDSOASDWS'), 67);
       });
       
     });
 
     describe('hackerrankInString ', function() {
       it('should return YES results when this hereiamstackerrank value  present', function() {
-        assert.equal(logic.hackerrankInString('hereiamstackerrank'), 'YES');
+        assert.equal(fiveStar.hackerrankInString('hereiamstackerrank'), 'YES');
       });
       it('should return NO results when this hackerworld value  present', function() {
-        assert.equal(logic.hackerrankInString('hackerworld'), 'NO');
+        assert.equal(fiveStar.hackerrankInString('hackerworld'), 'NO');
       });
       it('should return YES results when this hhaacckkekraraannk value  present', function() {
-        assert.equal(logic.hackerrankInString('hhaacckkekraraannk'), 'YES');
+        assert.equal(fiveStar.hackerrankInString('hhaacckkekraraannk'), 'YES');
       });
       it('should return NO results when this rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt value  present', function() {
-        assert.equal(logic.hackerrankInString('rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt'), 'NO');
+        assert.equal(fiveStar.hackerrankInString('rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt'), 'NO');
       });
 
       it('should return NO results when this Rhackerank  value  present', function() {
-        assert.equal(logic.hackerrankInString('Rhackerank'), 'NO');
+        assert.equal(fiveStar.hackerrankInString('Rhackerank'), 'NO');
       });
       
     });
 
     describe('pangrams ', function() {
       it('should return pangram results when this qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun value  present', function() {
-        assert.equal(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'), 'pangram');
+        assert.equal(fiveStar.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'), 'pangram');
       });
       it('should return not pangram results when this qmExzBIJmdELxyOFWv LOCmefk value  present', function() {
-        assert.equal(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk'), 'not pangram');
+        assert.equal(fiveStar.pangrams('qmExzBIJmdELxyOFWv LOCmefk'), 'not pangram');
       });
       
       
@@ -286,10 +289,10 @@ describe('Logic file', function() {
 
     describe('gemstones ', function() {
       it('should return 2 results when this abcdde,baccd,eeabg value  present', function() {
-        assert.equal(logic.gemstones(['abcdde','baccd','eeabg']), 2);
+        assert.equal(fourstar.gemstones(['abcdde','baccd','eeabg']), 2);
       });
       it('should return 1 results when this aacdde,aaccd,eeaag value  present', function() {
-        assert.equal(logic.gemstones(['aacdde','aaccd','eeaag']), 1);
+        assert.equal(fourstar.gemstones(['aacdde','aaccd','eeaag']), 1);
       });
       
       

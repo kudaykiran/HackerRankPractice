@@ -9,6 +9,12 @@ describe('Logic file', function() {
       it('should return 3 when ths [0, 0, 0, 1,0, 0] value  present', function() {
         assert.equal(fiveStar.jumpingOnCloudsEmma([0, 0, 0, 1,0, 0]), 3);
       });
+      it('should return 2 when ths [0, 1, 0, 1,1, 0] value  present', function() {
+        assert.equal(fiveStar.jumpingOnCloudsEmma([0, 1, 0, 1,1, 0]), 2);
+      });
+      it('should return 2 when ths [0, 1, 1, 0 , 1, 0] value  present', function() {
+        assert.equal(fiveStar.jumpingOnCloudsEmma([0, 1, 1, 0, 1, 0]), 2);
+      });
     });
 
     describe('funnyString ', function() {
@@ -40,6 +46,11 @@ describe('Logic file', function() {
       it('should return 45 results when this 9,6,2015,6,6,2015 value  present', function() {
         assert.equal(logic.libraryFine(9,6,2015,6,6,2015), 45);
       });
+
+      it('should return 500 results when this 9,6,2015,6,6,2015 value  present', function() {
+        assert.equal(logic.libraryFine(9,7,2015,6,6,2015), 500);
+      });
+
       it('should return 10000 results when this (1,6,2018,31,8,2017) value  present', function() {
         assert.equal(logic.libraryFine(1,6,2018,31,8,2017), 10000);
       });
@@ -67,6 +78,9 @@ describe('Logic file', function() {
       });
       it('should return 92 results when this [ 0 ,0 ,1 ,0 ,0 ,1 ,1 ,0 ], 2 value  present', function() {
         assert.equal(fiveStar.jumpingOnClouds([ 0 ,0 ,1 ,0 ,0 ,1 ,1 ,0 ], 2), 92);
+      });
+      it('should return 94 results when this [ 0 ,1 ,0 ,1 ,0 ,1 ,1 ,0 ], 2 value  present', function() {
+        assert.equal(fiveStar.jumpingOnClouds([ 0 ,1 ,0 ,1 ,0 ,1 ,1 ,0 ], 2), 94);
       });
     });
 

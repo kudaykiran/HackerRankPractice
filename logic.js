@@ -28,7 +28,7 @@ module.exports = {
     },
 
     minimumDistances : function(a) {
-        return fiveStar.minimumDistances(s);
+        return fiveStar.minimumDistances(a);
     },
 
     jumpingOnCloudsEmma: function (c) {

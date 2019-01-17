@@ -103,6 +103,38 @@ describe('Logic file', function() {
       });
 
       it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('aaaaaaaaaa','aaaaa',7), 'Yes');
+      });
+
+      it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('zzzzz','zzzzzzz',4), 'Yes');
+      });
+
+      it('should return No results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('qwerasdf','qwerbsdf',6), 'No');
+      });
+
+      it('should return No results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('y','yu',2), 'No');
+      });
+
+      it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('qwerty','zxcvbn',100), 'Yes');
+      });
+
+      it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('abcdef','fedcba',15), 'Yes');
+      });
+
+      it('should return No results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('abcd','abcdert',10), 'No');
+      });
+
+      it('should return Yes results when this  value  present', function() {
+        assert.equal(logic.appendAndDelete('aaa','a',10), 'Yes');
+      });
+
+      it('should return Yes results when this  value  present', function() {
         assert.equal(logic.appendAndDelete('asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
         ,'asdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcvasdfqwertyuighjkzxcv'
         ,100), 'Yes');

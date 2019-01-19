@@ -1,6 +1,8 @@
 var assert = require('assert');
 var logic = require('../logic');
 
+var sixstar = require("../sixstar");
+
 var fiveStar = require("../fivestar");
 var fourstar = require("../fourstar");
 var threestar = require("../threestar");
@@ -482,4 +484,21 @@ describe('Logic file', function() {
       
     });
     
+  });
+
+  describe('sixstar file', function() {
+    describe('alternatingCharacters ', function() {
+      it('should return one less length when ths same values  passed', function() {
+        assert.equal(sixstar.alternatingCharacters('AAAA'), 3);
+        assert.equal(sixstar.alternatingCharacters('BBBBB'), 4);
+
+      });
+      // it('should return 0 when ths BABABA value  present', function() {
+      //   assert.equal(sixstar.alternatingCharacters('BABABA'), 0);
+      //   assert.equal(sixstar.alternatingCharacters('ABABABAB'), 0);
+      // });
+      // it('should return 4 when AAABBB value  present', function() {
+      //   assert.equal(sixstar.alternatingCharacters('AAABBB'), 4);
+      // });
+    });
   });

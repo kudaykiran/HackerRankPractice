@@ -3,6 +3,7 @@ var logic= require("./logic");
 
 var fiveStar = require("./fivestar");
 var fourstar = require("./fourstar");
+var sixstar = require("./sixstar");
 
 // Make sure we got a filename on the command line.
 // if (process.argv.length < 3) {
@@ -17,6 +18,8 @@ var fourstar = require("./fourstar");
   fs.readFile(filename, 'utf8', function(err, data) {
     if (err) throw err;
     console.log('OK: ' + filename);
+    console.log(sixstar.alternatingCharacters('BABABA'));
+
 
     // c,onsole.log(logic(data));
     // console.log(logic.dayOfProgrammer(1917));
@@ -82,9 +85,9 @@ var fourstar = require("./fourstar");
     // console.log(logic.hackerrankInString('Rhackerank'));
     // console.log(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'));
 
-    var threeDatas =  data.split('\n');
+    // var threeDatas =  data.split('\n');
 
-    console.log(fourstar.gemstones(threeDatas));
+    // console.log(fourstar.gemstones(BABABA));
 
 
   });

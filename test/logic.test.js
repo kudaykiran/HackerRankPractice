@@ -59,6 +59,9 @@ describe('Logic file', function() {
       it('should return 10000 results when this (1,6,2018,31,8,2017) value  present', function() {
         assert.equal(logic.libraryFine('1,6,2018,31,8,2017'), 10000);
       });
+      it('should return 0 results when this nothing value  present', function() {
+        assert.equal(logic.libraryFine('1,1,1,1,1,1'), 0);
+      });
     });
 
     describe('squares ', function() {

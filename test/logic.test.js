@@ -1,5 +1,7 @@
 var assert = require('assert');
 var logic = require('../logic');
+var utils = require('../logic.utils');
+
 
 var sixstar = require("../sixstar");
 
@@ -493,12 +495,14 @@ describe('Logic file', function() {
         assert.equal(sixstar.alternatingCharacters('BBBBB'), 4);
 
       });
-      // it('should return 0 when ths BABABA value  present', function() {
-      //   assert.equal(sixstar.alternatingCharacters('BABABA'), 0);
-      //   assert.equal(sixstar.alternatingCharacters('ABABABAB'), 0);
-      // });
-      // it('should return 4 when AAABBB value  present', function() {
-      //   assert.equal(sixstar.alternatingCharacters('AAABBB'), 4);
-      // });
+      
     });
   });
+
+  describe('Logic Utils file', function() {
+    describe('getFine ', function() {
+      it('should return 0 when ths 0,1 value  present', function() {
+        assert.equal(utils.getFine(0,1), 0);
+      });
+    });
+  })

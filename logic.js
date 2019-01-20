@@ -53,9 +53,6 @@ module.exports = {
         if(d1 != d2){
             return utils.getFine(d1,d2,15);
         }
-
-        
-        
     
         return fine;
 

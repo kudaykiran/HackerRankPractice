@@ -1,4 +1,4 @@
-
+var utils = require('./fourstarutils');
 module.exports ={
 
     gemstones: function(arr){
@@ -89,18 +89,10 @@ module.exports ={
         while (keyboards.length > 0) {
             let keyboardMax = Math.max(...keyboards);
             let maxValues = drives.map(x => x + keyboardMax);
-            max = getMaxValue(maxValues,drives);
+            max = utils.getMaxValue(maxValues,drives,max,b);
 
-            for (let x = 0; x < drives.length; x++) {
-            
-                if (maxValues[x] > max && maxValues[x] <= b) {
-                    max = maxValues[x];
-                }
-            };
             keyboards = keyboards.filter(x => x != keyboardMax);
         }
-
-        
         
         return max > 0 ? max : -1;
 

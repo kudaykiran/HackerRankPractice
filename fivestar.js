@@ -1,3 +1,5 @@
+var utils= require('./fivestar.utils');
+
 module.exports = {
     pangrams: function(s){
         s = s.toLowerCase();
@@ -46,17 +48,7 @@ module.exports = {
     marsExploration : function(s) {
         let exceptSOS = s.split('').filter(x => x != 'SOS');
         let changed = 0;
-        for(let i = 0; i<exceptSOS.length ; i= i+3){
-            if(exceptSOS[i] != 'S'){
-                changed++;
-            }
-            if(exceptSOS[i + 1] != 'O'){
-                changed++;
-            }
-            if(exceptSOS[i + 2] != 'S'){
-                changed++;
-            }
-        }
+        changed = utils.marsExplorationutils(exceptSOS,changed);
 
         return changed;
     

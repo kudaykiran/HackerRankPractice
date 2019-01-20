@@ -91,6 +91,14 @@ module.exports ={
             let maxValues = drives.map(x => x + keyboardMax);
             max = getMaxValue(maxValues,drives);
 
+            for (let x = 0; x < drives.length; x++) {
+            
+                if (maxValues[x] > max && maxValues[x] <= b) {
+                    max = maxValues[x];
+                }
+            };
+            return max;
+
             keyboards = keyboards.filter(x => x != keyboardMax);
         }
 
@@ -100,15 +108,7 @@ module.exports ={
 
     },
 
-    getMaxValue: function(maxValues, drives){
-        for (let x = 0; x < drives.length; x++) {
-            
-            if (maxValues[x] > max && maxValues[x] <= b) {
-                max = maxValues[x];
-            }
-        };
-        return max;
-    },
+   
 
     countingValleys: function (s) {
 

@@ -97,8 +97,6 @@ module.exports ={
                     max = maxValues[x];
                 }
             };
-            return max;
-
             keyboards = keyboards.filter(x => x != keyboardMax);
         }
 

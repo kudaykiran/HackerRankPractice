@@ -1,4 +1,3 @@
-var utils = require('./fourstarutils');
 
 module.exports ={
 
@@ -117,9 +116,7 @@ module.exports ={
         let valleys = 0;
 
         s = s.split('');
-        //valleys = utils.getVallies(s,currLevel,valleys);
 
-        //getVallies: function(s,currLevel,valleys){
             for (let i = 0; i < s.length; i++) {
                 //update the current level
                 if (s[i] === 'U') {
@@ -131,8 +128,6 @@ module.exports ={
                     currLevel -= 1;
                 }
             }
-            //return valleys;
-       // },
 
         return valleys;
     },

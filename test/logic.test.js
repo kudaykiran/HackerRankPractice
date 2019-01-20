@@ -50,7 +50,7 @@ describe('Logic file', function() {
         assert.equal(logic.libraryFine('9,6,2015,6,6,2015'), 45);
       });
 
-      it('should return 500 results when this 9,6,2015,6,6,2015 value  present', function() {
+      it('should return 500 results when this 9,7,2015,6,6,2015 value  present', function() {
         assert.equal(logic.libraryFine('9,7,2015,6,6,2015'), 500);
       });
 

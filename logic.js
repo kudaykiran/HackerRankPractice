@@ -1,10 +1,9 @@
 var fiveStar = require("./fivestar");
 var fourstar = require("./fourstar");
+var utils = require("./logic.utils");
+
 
 module.exports = {
-
-
-
     camelcase : function(s){
         let numOfWords = s.replace(/[^A-Z]/g, "").length;
         return numOfWords + 1;
@@ -44,30 +43,26 @@ module.exports = {
         y2 = parseInt(val[5]);
 
         let fine = 0;
-        let date = 15;
-        let month = 500;
-        let year = 10000;
 
-        if(y1 == y2 && m1 == m2 && d1 != d2){
-            fine = getFine(d1,d2,date)
-        }
-
-        if(y1 == y2 && m1 != m2 ){
-            fine = getFine(m1,m2,month)
-        }
         if(y1 != y2){
-            fine = getFine(y1,y2,year)
+            return utils.getFine(y1,y2,10000);
         }
-              
-        
-       
-        function getFine(cond1, cond2, selection){
-            return (cond1 <= cond2) ? 0 : Math.abs(selection * (cond2 -cond1));
+        if( m1 != m2 ){
+           return fine = utils.getFine(m1,m2,500);
+        }
+        if(d1 != d2){
+            return utils.getFine(d1,d2,15);
         }
 
+        
+        
+    
         return fine;
 
     },
+
+    
+
 
     squares: function(a,b){
       

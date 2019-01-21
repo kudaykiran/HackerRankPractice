@@ -80,7 +80,7 @@ var sixstar = require("./sixstar");
 
     // console.log(logic.camelcase('aBc'));
 
-    // console.log(logic.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
+    console.log(fiveStar.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
 
     // console.log(logic.hackerrankInString('Rhackerank'));
     // console.log(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'));

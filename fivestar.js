@@ -130,8 +130,11 @@ module.exports = {
 
          
         for(let i =0; i<ansciValueOfString[0].length; i++){
+            if(ansciValueOfString[0][i + 1]  == undefined) {
+                return isFunnyOrNot == '' ? 'Not Funny' :  isFunnyOrNot;
+            }
             isFunnyOrNot= utils.checkFunnyOrNot(ansciValueOfString[0][i],ansciValueOfString[0][i + 1]
-                            ,ansciValueOfReverseString[0][i],ansciValueOfReverseString[0][i + 1], isFunnyOrNot);
+                            ,ansciValueOfReverseString[0][i],ansciValueOfReverseString[0][i + 1]);
             if(isFunnyOrNot == 'Not Funny'){
                 break;
             }

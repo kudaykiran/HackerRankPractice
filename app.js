@@ -73,14 +73,14 @@ var sixstar = require("./sixstar");
     // console.log(logic.jumpingOnCloudsEmma([0, 0, 0, 1,0, 0]));
     // console.log(logic.minimumDistances([1, 2, 3, 4, 10]));
 
-    // console.log(logic.funnyString('acxz'));
+    console.log(fiveStar.funnyString('acxz'));
     // console.log(logic.nonDivisibleSubset(7, [278, 576, 496, 727, 410, 124, 338, 149, 209, 702, 282, 718, 771, 575, 436]));
 
     // console.log(logic.timeInWords(7, 29));
 
     // console.log(logic.camelcase('aBc'));
 
-    console.log(fiveStar.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
+    // console.log(fiveStar.marsExploration('OOSDSSOSOSWEWSOSOSOSOSOSOSSSSOSOSOSS'));
 
     // console.log(logic.hackerrankInString('Rhackerank'));
     // console.log(logic.pangrams('qmExzBIJmdELxyOFWv LOCmefk TwPhargKSPEqSxzveiun'));

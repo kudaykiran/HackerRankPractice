@@ -14,5 +14,20 @@ module.exports ={
             changed++;
         }
         return changed;
-    }
+    },
+    checkFunnyOrNot: function(ansciValue1, ansciValue2,ansciValueReverse1, ansciValueReverse2, isFunnyOrNot){
+        let passedValue = isFunnyOrNot;
+        if(ansciValue2  == undefined) {
+            return passedValue == '' ? 'Not Funny' :  passedValue;
+        } else if( Math.abs(ansciValue2 - ansciValue1)
+              != Math.abs(ansciValueReverse2 - ansciValueReverse1)){
+                passedValue = 'Not Funny';
+                
+        } else {
+            passedValue = 'Funny';
+        }
+
+        return passedValue
+
+    },
 }

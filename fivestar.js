@@ -92,8 +92,7 @@ module.exports = {
                         if(60 - Number(m) == 15){
                             retString += ten[Number((60 - Number(m)).toString().slice(1,2))] + ' to '+single[h + 1];
                         } else {
-                        retString += ten[Number((60 - Number(m)).toString().slice(1,2))] + ' minutes to '+single[h + 1];
-
+                            retString += ten[Number((60 - Number(m)).toString().slice(1,2))] + ' minutes to '+single[h + 1];
                         }
 
                     } else {
@@ -131,20 +130,17 @@ module.exports = {
 
          
         for(let i =0; i<ansciValueOfString[0].length; i++){
-            
-            if(ansciValueOfString[0][i + 1]  == undefined) {
-                return isFunnyOrNot == '' ? 'Not Funny' :  isFunnyOrNot;
-            } else if( Math.abs(ansciValueOfString[0][i + 1] - ansciValueOfString[0][i])
-                  != Math.abs(ansciValueOfReverseString[0][i + 1] - ansciValueOfReverseString[0][i])){
-                    isFunnyOrNot = 'Not Funny';
-                    break;
-            } else {
-                isFunnyOrNot = 'Funny';
+            isFunnyOrNot= utils.checkFunnyOrNot(ansciValueOfString[0][i],ansciValueOfString[0][i + 1]
+                            ,ansciValueOfReverseString[0][i],ansciValueOfReverseString[0][i + 1], isFunnyOrNot);
+            if(isFunnyOrNot == 'Not Funny'){
+                break;
             }
         }
 
         return isFunnyOrNot;
     },
+
+   
 
     minimumDistances : function(a) {
         let minimumDist = a.length;

@@ -14,6 +14,17 @@ describe("fourstarutils", function(){
           });
         
       });
+
+      describe('getVallsCount ', function() {
+        it('should return 0 when 1,0 value  present', function() {
+          assert.equal(utils.getVallsCount(1,0), 0);
+        });
+
+        it('should return 1 when 0,0 value  present', function() {
+            assert.equal(utils.getVallsCount(0,0), 1);
+          });
+        
+      });
   
 
 });

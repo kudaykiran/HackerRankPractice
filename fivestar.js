@@ -5,13 +5,15 @@ module.exports = {
         s = s.toLowerCase();
         let alp = 'abcdefghijklmnopqrstuvwxyz'.split('');
         let count = 1;
-        for(let i = 0;i<alp.length ; i++){
-            if(s.includes(alp[i])) {count++;}
-            else{ 
-                let v = alp[i];
-                v= '';
+
+        count = alp.reduce((pv,cv) => {
+            if(s.includes(cv)) {
+                pv++;
             }
-        }
+            
+            return pv;
+        },1);
+      
         return count > 26 ? 'pangram' : 'not pangram';
 
     },

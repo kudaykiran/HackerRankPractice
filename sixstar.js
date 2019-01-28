@@ -59,5 +59,42 @@ module.exports ={
     stringConstruction: function(s){
        return [...new Set(s.split(''))].length;
 
-    }
+    },
+
+    isValid: function(s){
+        let distEle = [...new Set(s.split(''))];
+        let count = [];
+        let values = s.split('');
+
+      distEle.map((x,i) => {
+            let c = 0;
+            for(let ind =0 ; ind < values.length; ind++){
+                if(x == values[ind]){
+                    c++;
+                }
+            }
+            count.push(c);
+            return c;
+        });
+        if(count.every(x => x == count[0])){
+            return 'YES';
+        } else {
+
+            if( count.filter(x => x != count[0]).length > 1 ){ return 'NO';}
+            
+            if([...new Set(count)].length > 2){
+                return 'NO';
+            } else {
+                let newDist = [...new Set(count)];
+                if(newDist.length == 2 && newDist[1] != undefined && (Math.abs(newDist[1] - newDist[0]) == 1 || newDist[1] == 1 || newDist[0] == 1)){
+                    return 'YES';
+                }                
+                else{
+                    return 'NO';
+                }
+
+            }
+        }
+    },
+
 }

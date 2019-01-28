@@ -19,7 +19,11 @@ var asyncnawait = require("./asynAndAwait");
   fs.readFile(filename, 'utf8', function(err, data) {
     if (err) throw err;
     console.log('OK: ' + filename);
-    console.log(sixstar.alternatingCharacters('ABBABBAA'));
+    // console.log(sixstar.alternatingCharacters('ABBABBAA'));
+
+    // console.log(sixstar.superReducedString('mwkommokwmxjivkkvijxshscbbcshsgwdyqqydwgzpnlzzlnpzvfeaiiaefvyeqjccjqeymhqhiihqhmhaomkkmoahhddymmyddh'));
+
+    console.log(sixstar.stringConstruction('abcdabcd'));
 
 
     // c,onsole.log(logic(data));

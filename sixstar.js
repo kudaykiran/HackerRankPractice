@@ -1,6 +1,31 @@
 let utils = require('./sixstarutils');
 
 module.exports ={
+
+    anagram: function(s){
+        let ar = s.split('');
+        if(ar.length%2 != 0)
+        {
+            return -1;
+        }
+// d,v,o,s
+        let middlePoint = ar.length/2;
+        let firstSet = ar.slice(0,middlePoint);
+        let secondSet = ar.slice(middlePoint, ar.length);
+        
+        let count = 0;
+
+        firstSet.map(x => {
+            if(!secondSet.some(y => y == x)){
+                count++;
+            }
+            // [, ...secondSet] = secondSet;
+            return 0;
+        });
+
+        return count;
+    },
+
     alternatingCharacters: function(s){
         let firstChar = s.split('').pop();
         

@@ -75,4 +75,34 @@ describe("sixstar", function(){
             assert.equal(utils.isValid('ibfdgaeadiaefgbhbdghhhbgdfgeiccbiehhfcggchgghadhdhagfbahhddgghbdehidbibaeaagaeeigffcebfbaieggabcfbiiedcabfihchdfabifahcbhagccbdfifhghcadfiadeeaheeddddiecaicbgigccageicehfdhdgafaddhffadigfhhcaedcedecafeacbdacgfgfeeibgaiffdehigebhhehiaahfidibccdcdagifgaihacihadecgifihbebffebdfbchbgigeccahgihbcbcaggebaaafgfedbfgagfediddghdgbgehhhifhgcedechahidcbchebheihaadbbbiaiccededchdagfhccfdefigfibifabeiaccghcegfbcghaefifbachebaacbhbfgfddeceababbacgffbagidebeadfihaefefegbghgddbbgddeehgfbhafbccidebgehifafgbghafacgfdccgifdcbbbidfifhdaibgigebigaedeaaiadegfefbhacgddhchgcbgcaeaieiegiffchbgbebgbehbbfcebciiagacaiechdigbgbghefcahgbhfibhedaeeiffebdiabcifgccdefabccdghehfibfiifdaicfedagahhdcbhbicdgibgcedieihcichadgchgbdcdagaihebbabhibcihicadgadfcihdheefbhffiageddhgahaidfdhhdbgciiaciegchiiebfbcbhaeagccfhbfhaddagnfieihghfbaggiffbbfbecgaiiidccdceadbbdfgigibgcgchafccdchgifdeieicbaididhfcfdedbhaadedfageigfdehgcdaecaebebebfcieaecfagfdieaefdiedbcadchabhebgehiidfcgahcdhcdhgchhiiheffiifeegcfdgbdeffhgeghdfhbfbifgidcafbfcd'), 'YES');
         });
     });
+
+    describe('anagram ', function() {
+        it('should return -1 when abc value  present', function() {
+          assert.equal(utils.anagram('abc'), -1);
+        });
+
+        it('should return 3 when aaabbb value  present', function() {
+            assert.equal(utils.anagram('aaabbb'), 3);
+        });
+
+        it('should return 1 when ab value  present', function() {
+            assert.equal(utils.anagram('ab'), 1);
+        });
+
+        it('should return 2 when mnop value  present', function() {
+            assert.equal(utils.anagram('mnop'), 2);
+        });
+
+        it('should return 0 when xyyx value  present', function() {
+            assert.equal(utils.anagram('xyyx'), 0);
+        });
+
+        it('should return 1 when xaxbbbxx value  present', function() {
+            assert.equal(utils.anagram('xaxbbbxx'), 1);
+        });
+
+        // it('should return 5 when fdhlvosfpafhalll value  present', function() {
+        //     assert.equal(utils.anagram('fdhlvosfpafhalll'), 5);
+        // });
+    });
 });

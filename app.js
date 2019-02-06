@@ -97,13 +97,14 @@ var asyncnawait = require("./asynAndAwait");
 
 
     // ===================== ASYNC and AWAIT ================== //
-    // asyncnawait.co
-  //   asyncnawait.convert('USD', 'HRK', 20)
-  //   .then((message) => {
-  //     console.log(message);
-  //   }).catch((error) => {
-  //     console.log(error.message);
-  //   });
+    // asyncnawait.convert('USD', 'HRK', 20)
+    // .then((message) => {
+    //   console.log(message);
+    // }).catch((error) => {
+    //   console.log(error.message);
+    // });
+
+    // asyncnawait.parallel();
 
 });
 

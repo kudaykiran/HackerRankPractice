@@ -105,4 +105,22 @@ describe("sixstar", function(){
         //     assert.equal(utils.anagram('fdhlvosfpafhalll'), 5);
         // });
     });
+
+    describe('buyAndSellDay ', function() {
+        it('should return 0 3 4 6 when 100 180 260 310 40 535 695 value  present', function() {
+          assert.equal(utils.buyAndSellDay('100 180 260 310 40 535 695')[0][0], 0);
+          assert.equal(utils.buyAndSellDay('100 180 260 310 40 535 695')[1][0], 3);
+          assert.equal(utils.buyAndSellDay('100 180 260 310 40 535 695')[0][1], 4);
+          assert.equal(utils.buyAndSellDay('100 180 260 310 40 535 695')[1][1], 6);
+
+        });
+
+        it('should return 1 4 5 8 when 23 13 25 29 33 19 34 45 65 67 value  present', function() {
+            assert.equal(utils.buyAndSellDay('23 13 25 29 33 19 34 45 65 67')[0][0], 1);
+            assert.equal(utils.buyAndSellDay('23 13 25 29 33 19 34 45 65 67')[1][0], 4);
+            assert.equal(utils.buyAndSellDay('23 13 25 29 33 19 34 45 65 67')[0][1], 5);
+            assert.equal(utils.buyAndSellDay('23 13 25 29 33 19 34 45 65 67')[1][1], 9);
+  
+          });
+    });
 });

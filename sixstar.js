@@ -1,39 +1,44 @@
 let utils = require('./sixstarutils');
 
-function getBuyAndSellDays(vals, minVal){
-    let buy_Days = [], sell_Days = [];
-    let buyDay = 0;
-    let sellDay = 0;
-    if (vals.indexOf(minVal.toString()) < parseInt(vals.length / 2)) {
-        let newarr = vals.filter(x => x != minVal);
+var calculate = (function(){
 
-        [buyDay, sellDay] = getMinMax(vals.slice(0, vals.indexOf(Math.min(...newarr).toString())));
-        buy_Days.push(vals.indexOf(buyDay.toString()));
-        sell_Days.push(vals.indexOf(sellDay.toString()));
-        [buyDay, sellDay] = getMinMax(vals.slice(vals.indexOf(Math.min(...newarr).toString()), vals.length));
-        buy_Days.push(vals.indexOf(buyDay.toString()));
-        sell_Days.push(vals.indexOf(sellDay.toString()));
-
-
-    } else {
-        [buyDay, sellDay] = getMinMax(vals.slice(0, vals.indexOf(minVal.toString())));
-        buy_Days.push(vals.indexOf(buyDay.toString()));
-        sell_Days.push(vals.indexOf(sellDay.toString()));
-        [buyDay, sellDay] = getMinMax(vals.slice(vals.indexOf(minVal.toString()), vals.length));
-        buy_Days.push(vals.indexOf(buyDay.toString()));
-        sell_Days.push(vals.indexOf(sellDay.toString()));    
+    var getBuyAndSellDays = function(vals, minVal){
+        let buy_Days = [], sell_Days = [];
+        let buyDay = 0;
+        let sellDay = 0;
+        if (vals.indexOf(minVal.toString()) < parseInt(vals.length / 2)) {
+            let newarr = vals.filter(x => x != minVal);
+    
+            [buyDay, sellDay] = getMinMax(vals.slice(0, vals.indexOf(Math.min(...newarr).toString())));
+            buy_Days.push(vals.indexOf(buyDay.toString()));
+            sell_Days.push(vals.indexOf(sellDay.toString()));
+            [buyDay, sellDay] = getMinMax(vals.slice(vals.indexOf(Math.min(...newarr).toString()), vals.length));
+            buy_Days.push(vals.indexOf(buyDay.toString()));
+            sell_Days.push(vals.indexOf(sellDay.toString()));
+    
+    
+        } else {
+            [buyDay, sellDay] = getMinMax(vals.slice(0, vals.indexOf(minVal.toString())));
+            buy_Days.push(vals.indexOf(buyDay.toString()));
+            sell_Days.push(vals.indexOf(sellDay.toString()));
+            [buyDay, sellDay] = getMinMax(vals.slice(vals.indexOf(minVal.toString()), vals.length));
+            buy_Days.push(vals.indexOf(buyDay.toString()));
+            sell_Days.push(vals.indexOf(sellDay.toString()));    
+        }
+    
+        return [buy_Days , sell_Days];
+    }
+    
+    var getMinMax = function(args){
+        return [ buyDay = Math.min(...args), sellDay = Math.max(...args) ]
     }
 
-    return [buy_Days , sell_Days];
-}
-
-function getMinMax(args){
-    return [ buyDay = Math.min(...args), sellDay = Math.max(...args) ]
-
-}
+    return {
+        getBuyAndSellDays : getBuyAndSellDays,
+    }
+}());
 
 module.exports = {
-
     buyAndSellDay: function(arr){ 
         // 100 180 260 310 40 535 695
         // 23 13 25 29 33 19 34 45 65 67
@@ -42,7 +47,7 @@ module.exports = {
 
         let minVal = Math.min(...vals);
 
-        [buy_Days, sell_Days] = getBuyAndSellDays(vals, minVal);
+        [buy_Days, sell_Days] = calculate.getBuyAndSellDays(vals, minVal);
 
         return [buy_Days, sell_Days];
     },

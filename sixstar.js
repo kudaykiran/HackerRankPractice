@@ -38,7 +38,36 @@ var calculate = (function(){
     }
 }());
 
+// var countVals = 
+
 module.exports = {
+
+    equalizeArray: function(arr){
+       let distVal = [...new Set(arr.sort())];// arr.sort();
+       let countOfEach =  distVal.map(x => countVals(x , arr));
+       let maxValue = Math.max(...countOfEach);
+       countOfEach = countOfEach.filter( x => x != maxValue);
+       let totalCount = countOfEach.reduce((c,x) => c + x , 0);
+
+       function countVals(a, ar){
+        let count = 0;
+        count = ar.reduce((c,x) => {
+            if(x == a){
+                count++;
+            }
+            return count;
+    
+        }, 0);
+       return count; 
+    }
+       if(totalCount <= maxValue){
+           return totalCount;
+       }
+       else {
+           return Math.max(...countOfEach);
+       }
+    },
+
     buyAndSellDay: function(arr){ 
         // 100 180 260 310 40 535 695
         // 23 13 25 29 33 19 34 45 65 67

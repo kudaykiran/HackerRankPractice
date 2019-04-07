@@ -134,5 +134,21 @@ describe("sixstar", function () {
         });
     });
 
+    describe('beautifulBinaryString ', function () {
+        it('should return 3 when 0100101010 value  passed', function () {
+            assert.equal(utils.beautifulBinaryString('0100101010'), 3);
+        });
+
+        it('should return 0 when 01100 value  passed', function () {
+            assert.equal(utils.beautifulBinaryString('01100'), 0);
+        });
+
+        it('should return 2 when 0101010 value  passed', function () {
+            assert.equal(utils.beautifulBinaryString('0101010'), 2);
+        });
+
+        
+    });
+
 
 });
